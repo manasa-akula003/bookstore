@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .register-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .register-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .input-field {
+            margin-bottom: 15px;
+            width: 100%;
+        }
+        .input-field input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .input-field input:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .success-message {
+            color: green;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="register-container">
+    <h2>Register</h2>
+    <form id="registerForm">
+        <div class="input-field">
+            <input type="text" id="username" placeholder="Username" required>
+            <div id="usernameError" class="error-message"></div>
+        </div>
+          
+        <div class="input-field">
+            <input type="email" id="email" placeholder="Email" required>
+            <div id="emailError" class="error-message"></div>
+        </div>
+        <div class="input-field">
+            <input type="password" id="password" placeholder="Password" required>
+            <div id="passwordError" class="error-message"></div>
+        </div>
+        <div class="input-field">
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+            <div id="confirmPasswordError" class="error-message"></div>
+        </div>
+        <button type="submit" class="submit-btn">Register</button>
+    </form>
+    <div id="formSuccess" class="success-message"></div>
+    <a href="home.html">Home</a>
+        <a href="login.html">Login</a>
+    
+</div>
+
+<script>
+document.getElementById('registerForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  clearMessages();
+
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirmPassword').value;
+  if (password !== confirmPassword) {
+    document.getElementById('confirmPasswordError').textContent = "Passwords do not match";
+    return;
+  }
+
+  const formData = {
+    sNo: Math.floor(Math.random() * 1000),
+    userName: document.getElementById('username').value,
+    email: document.getElementById('email').value,
+    password: password
+  };
+
+  fetch('http://localhost:8081/bookStore/register', {
+	  method: 'POST',
+	  headers: {
+	    'Content-Type': 'application/x-www-form-urlencoded'
+	  },
+	  body: new URLSearchParams(formData)
+	})
+	.then(response => {
+	  if (!response.ok) throw new Error("Server error");
+	  return response.json(); // Parse JSON from servlet
+	})
+	.then(data => {
+	  console.log("Server Response:", data);
+	  const formSuccess = document.getElementById('formSuccess');
+	  formSuccess.textContent = data.message;
+
+	  if (data.status === "success") {
+	    formSuccess.style.color = "green";
+	    document.getElementById('registerForm').reset();
+	  } else {
+	    formSuccess.style.color = "red";
+	  }
+	})
+	.catch(error => {
+	  console.error("Error:", error);
+	  const formSuccess = document.getElementById('formSuccess');
+	  formSuccess.textContent = "Something went wrong!";
+	  formSuccess.style.color = "red";
+	});
+
+});
+
+function clearMessages() {
+  document.getElementById('usernameError').textContent = "";
+  document.getElementById('emailError').textContent = "";
+  document.getElementById('passwordError').textContent = "";
+  document.getElementById('confirmPasswordError').textContent = "";
+  document.getElementById('formSuccess').textContent = "";
+}
+
+</script>
+
+
+</body>
+</html>

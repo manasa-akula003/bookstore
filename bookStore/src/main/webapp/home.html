@@ -1,0 +1,612 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>BookStore | Homepage</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <style>
+        
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7fa;
+  }
+
+  /* Header Styles */
+  .navbar {
+    background-color: #2c3e50;
+  }
+
+  .navbar .navbar-brand {
+    color: #ecf0f1;
+    font-weight: 700;
+    
+  }
+  
+  .m{
+  
+     position:absolute;
+      width:80px;
+  
+  }
+
+  .navbar .navbar-nav .nav-link {
+    color: #ecf0f1 !important;
+    font-weight: 500;
+  }
+
+  .navbar .navbar-nav .nav-link:hover {
+    color: #d1d1d1 !important;
+  }
+
+  /* Hero Section */
+  .hero {
+    background-image: url(https://img.freepik.com/premium-photo/book-stack-wood-desk-blurred-bookshelf-library-roomcreated-with-generative-ai-technology_132358-8739.jpg?w=740); /* Placeholder image */
+    background-size: cover;
+    background-position: center;
+    height: 700px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+ /* .s{
+  
+      background-image:url(https://www.nbc4i.com/wp-content/uploads/sites/18/2024/05/AdobeStock_259130513-e1716571997848.jpeg?strip=1&w=640);
+  background-size: cover;
+    background-position: center;
+    opacity:0.2;
+   display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+  
+  }*/
+
+  .hero h1 {
+    font-size: 50px;
+    font-weight: 700;
+  }
+
+  .hero p {
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 10px;
+  }
+
+  /* Featured Books Section */
+  .feature-books {
+    margin: 50px 0;
+
+  }
+
+  .feature-books .book {
+    border: none;
+    margin-bottom: 20px;
+     display:block;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+    
+    object-fit: cover;
+  }
+
+
+   .book-author {
+      color: #555;
+      font-size: 14px;
+       position:absolute;
+      left:70px;
+     
+    }
+    
+    
+  .feature-books .book img {
+   
+    display : block;
+    width:80%;
+    height:80%;
+  }
+
+  .feature-books .book-title {
+    font-weight: 400;
+     position:relative;
+      text-align:center;
+    
+  }
+
+  /* Footer */
+  .footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 0 0;
+    text-align: center;
+  }
+
+  .footer a {
+    color: #ecf0f1;
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    color: #e74c3c;
+  }
+  .a{
+  
+  padding:30px;
+  width:320px;
+  }
+  
+   .b{
+   position:relative;
+   width:100%;
+    height :70%;
+    background-image:cover;
+   }
+  
+  
+    .price-tag {
+      margin-top: 10px;
+      padding: 8px 12px;
+      font-size: 18px;
+       position:relative;
+      left:50px;
+    }
+
+    .price-old {
+      text-decoration: line-through;
+      color: gray;
+      font-size: 16px;
+      margin-right: 8px;
+       position:relative;
+      left:60px;
+    }
+
+    .price-section {
+      margin-top: 10px;
+      padding:10px;
+    }
+  
+    .button {
+  
+    position:relative;
+    left:50px;
+    text-align:center;
+  
+  }
+   <!--
+   img{
+   
+   width:20px;
+   height:20px;
+   position:relative;
+   right:10px;
+   top:11px;
+   color: #d1d1d1 !important;
+   
+   
+  }
+ -->
+.cart-icon {
+
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top:35px;
+  right:37px;
+  
+}
+
+.view-details-btn {
+  margin-top: 10px;
+  background-color: #007bff; /* Bootstrap primary */
+  color: #fff;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.view-details-btn:hover {
+  background-color: #0056b3;
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.z{
+  
+  position:relative;
+  top:10px;
+
+}
+ 
+      </style>
+  </head>
+  <body>
+
+<section>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="#">BookStore</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="categories.html">Categories</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="books.html">Books</a>
+              </li> 
+              
+              <li class="nav-item">
+                  <a class="nav-link" href="register.html">Register</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="login.html">Login</a>
+              </li>
+              <li class="nav-item">
+                 <a href="cart.html" class="btn btn-outline-light">
+                     🛒 Cart (<span id="cart-count">0</span>)
+                  </a>
+               </li>
+          </ul>
+      </div>
+  </nav>
+  
+ 
+
+  <!-- Hero Section-->
+  <section class="hero">
+      <div>
+          <h1>Welcome to BookStore</h1>
+          <p>Your One-Stop Destination for Books</p>
+      </div>
+  </section>
+ 
+ </section>
+   
+  <!-- Featured Books Section -->
+  <section class=" fluid-container feature-books">
+      <h2 class="text-center">Featured Books</h2>
+      <div class="row">
+     <div class="col-sm-6 col-md-4 col-lg-2">
+              <div class="book">
+                  <div class="a">   
+                     <img src="https://m.media-amazon.com/images/I/81q77Q39nEL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="Cover of Harry Potter and The Philosopher's Stone">
+">
+                  </div>
+                  <div class="book-title">Harry Potter and The Philosopher's Stone</div>
+                     <div class="book-author">by J.K.Rowling</div>
+                       <div class="price-section">
+                          <span class="price-old">₹599</span>
+                           <span class="price-tag">₹374</span>
+                         <button 
+                                  class="btn btn-success button add-to-cart"
+                                 data-title="Harry Potter and The Philosopher's Stone"
+                                    data-author="J.K.Rowling"
+                                     data-price="374">
+                                          Add to Cart
+                                 </button>
+                                 <a href="book-details.html?id=harry-potter" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                      </div>
+              </div>
+         </div>      
+        <div class="col-sm-6 col-md-4 col-lg-2">
+              <div class="book">
+                 <div class="a">   
+                  <img src="https://miblart.com/wp-content/uploads/2020/10/2LTd4fOY.jpeg" class="card-img-top" alt="Book 2">
+                 </div>
+                   <div class="book-title">The Skittering and Other Tales</div>
+                     <div class="book-author">by Toney R Tucker</div>
+                      <div class="price-section">
+                        <span class="price-old">₹599</span>
+                         <span class="price-tag" id="priceTag">₹450</span>
+                          <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="The Skittering and Other Tales"
+                              data-author="Toney R Tucker"
+                              data-price="450">
+                               Add to Cart
+                             </button>
+                               <a href="book-details.html?id=the-skittering"  class="btn btn-primary button , z" >View Details</a>
+                             
+                     </div>	
+             </div>
+         </div>
+      <div class="col-sm-6 col-md-4 col-lg-2">
+              <div class="book">
+                 <div class="a">   
+                  <img src="https://miblart.com/wp-content/uploads/2020/10/Raymond-Beckham-683x1024.jpg" class="card-img-top" alt="Book 3">
+                 </div>
+                    <div class="book-title">Those Eyes</div>
+                     <div class="book-author">by Raymond Bechkam  Darius cook</div>
+                      <div class="price-section">
+                        <span class="price-old">₹599</span>
+                         <span class="price-tag" id="priceTag">₹380</span>
+                       <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="Those Eyes"
+                              data-author="Raymond Bechkam  Darius cook"
+                              data-price="380">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=those-eyes" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>	
+             </div>
+         </div>
+      <div class="col-sm-6 col-md-4 col-lg-2">
+              <div class="book">
+                <div class="a">   
+                  <img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1556908404-51iPvEjUwnL.jpg?crop=1xw:1xh;center,top&resize=480:*" class="card-img-top" alt="Book 4">
+                </div>
+                    <div class="book-title">The Women In The Castle</div>
+                     <div class="book-author">by Jessica Shattuck</div>
+                      <div class="price-section">
+                        <span class="price-old">₹599</span>
+                         <span class="price-tag" id="priceTag">₹280</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="The Women In The Castle"
+                              data-author="Jessica Shattuck"
+                              data-price="280">
+                               Add to Cart
+                             </button>
+                            <a href="book-details.html?id=the-women" class="btn btn-primary button , z">
+                                 View Details
+                            </a>
+                    </div>	
+              </div>
+          </div>
+      <div class="col-sm-6 col-md-4 col-lg-2">
+            <div class="book">
+                 <div class="a">   
+                  <img src="https://getcovers.com/wp-content/uploads/2020/12/image15-1-1.jpg" class="card-img-top" alt="Book 4">
+                 </div>
+                  <div class="book-title">My Quiet Imagination</div>
+                     <div class="book-author">by Paulo Coelho</div>
+                      <div class="price-section">
+                        <span class="price-old">₹599</span>
+                         <span class="price-tag" id="priceTag">₹419</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="My Quiet Imagination"
+                              data-author="Paulo Coelho"
+                              data-price="419">
+                               Add to Cart
+                             </button>
+                           <a href="book-details.html?id=my-quiet" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                  </div>
+           </div>
+         </div>
+      <div class="col-sm-6 col-md-4 col-lg-2">
+            <div class="book">
+                <div class="a">   
+                 <img src="https://artworks.thetvdb.com/banners/v4/series/430061/posters/65f8b6dc55cb1.jpg" class="card-img-top" alt="Book 4">
+                </div>
+                  <div class="book-title">A Good Girl's Guide To Murder</div>
+                     <div class="book-author">by Holly Jackson</div>
+                      <div class="price-section">
+                        <span class="price-old">₹599</span>
+                         <span class="price-tag" id="priceTag">₹299</span>
+                   <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="A Good Girl's Guide To Murder"
+                              data-author="Holly Jackson"
+                              data-price="299">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=a-good" class="btn btn-primary button , z">
+                                 View Details 
+                              </a>
+                 </div>
+           </div>
+       </div>
+     </div>
+     <div class="row">
+    <div class="col-sm-6 col-md-4 col-lg-2">
+            <div class="book">
+               <div class="a">   
+                  <img src="https://m.media-amazon.com/images/I/8196x-1wIOL._UF1000,1000_QL80_.jpg" class="card-img-top" alt="Book 4">
+              </div>
+                  <div class="book-title">Never Lie</div>
+                     <div class="book-author">by Freida McFadden</div>
+                      <div class="price-section">
+                        <span class="price-old">₹599</span>
+                         <span class="price-tag" id="priceTag">₹320</span>
+                       <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="Never Lie"
+                              data-author=" Freida McFadden"
+                              data-price="320">
+                               Add to Cart
+                             </button>
+                            <a href="book-details.html?id=never-lie" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                    </div>    
+           </div>
+       </div>
+    <div class="col-sm-6 col-md-4 col-lg-2">
+            <div class="book">
+               <div class="a">   
+                  <img src="https://m.media-amazon.com/images/I/91lslnZ-btL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="Book 4">
+              </div>
+                  <div class="book-title">The Silent Patient</div>
+                     <div class="book-author">by Alex Michaelides</div>
+                      <div class="price-section">
+                        <span class="price-old">₹599</span>
+                         <span class="price-tag" id="priceTag">₹390</span>
+                       <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="The Silent Patient"
+                              data-author="Alex Michaelides"
+                              data-price="390">
+                               Add to Cart
+                             </button>
+                            <a href="book-details.html?id=the-silent" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                   </div>
+           </div>
+        </div>
+     <div class="col-sm-6 col-md-4 col-lg-2">
+            <div class="book">
+               <div class="a">   
+                  <img src="https://m.media-amazon.com/images/I/81MQh7LndSL._SY385_.jpg" class="card-img-top" alt="Book 4">
+              </div>
+                 <div class="book-title">The Secret</div>
+                     <div class="book-author">by Rhonda Byrne</div>
+                      <div class="price-section">
+                        <span class="price-old">₹699</span>
+                         <span class="price-tag" id="priceTag">₹517</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="The Secret"
+                              data-author="Rhonda  Byrne"
+                              data-price="517">
+                               Add to Cart
+                             </button>
+                            <a href="book-details.html?id=the-secret" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                    </div>
+            </div>
+         </div>
+     <div class="col-sm-6 col-md-4 col-lg-2">
+            <div class="book">
+               <div class="a">   
+                  <img src="https://m.media-amazon.com/images/I/712K3sdLlRL.jpg" class="card-img-top" alt="Book 4">
+              </div>
+                <div class="book-title">Dopamine Detox</div>
+                     <div class="book-author">by Thibaut Meurisse</div>
+                      <div class="price-section">
+                        <span class="price-old">₹729</span>
+                         <span class="price-tag" id="priceTag">₹399</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="Dopamine  Detox"
+                              data-author="Thibaut Meurisse"
+                              data-price="399">
+                               Add to Cart
+                             </button>
+                           <a href="book-details.html?id=dopamine-detox" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+               </div>
+        </div>
+      <div class="col-sm-6 col-md-4 col-lg-2">
+            <div class="book">
+               <div class="a">   
+                  <img src="https://m.media-amazon.com/images/I/81gTwYAhU7L.jpg" class="card-img-top" alt="Book 4">
+               </div>
+                  <div class="book-title">The Power Of Your Subconcious Mind</div>
+                     <div class="book-author">by Dr.Joseph Murphy</div>
+                      <div class="price-section">
+                        <span class="price-old">₹599</span>
+                         <span class="price-tag" id="priceTag">₹459</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="The Power Of Your Subconcious Mind"
+                              data-author="Dr.Joseph Murphy"
+                              data-price="459">
+                               Add to Cart
+                             </button>
+                            <a href="book-details.html?id=the-power" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                  </div>
+           </div>
+           
+        </div>
+     <div class="col-sm-6 col-md-4 col-lg-2">
+            <div class="book">
+               <div class="a">   
+                  <img src="https://m.media-amazon.com/images/I/81xqg04BTLL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="Book 4">
+              </div>
+                  <div class="book-title">Panchatantra</div>
+                     <div class="book-author">by Rungeen Singh</div>
+                      <div class="price-section">
+                        <span class="price-old">₹200</span>
+                         <span class="price-tag" id="priceTag">₹80.00</span>
+                       <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="Panchatantra"
+                              data-author="Rungeen Singh"
+                              data-price="80">
+                               Add to Cart
+                             </button>
+                           <a href="book-details.html?id=Panchatantra" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                   </div>
+            </div>
+         </div>
+    </div>
+      
+  </section>
+ 
+
+  <!-- Footer -->
+  <!--  
+  <footer class="footer">
+     <p>
+          <a href="#">Privacy Policy</a> | 
+          <a href="#">Terms of Service</a> | 
+          <a href="#">Sitemap</a>
+      </p>
+  </footer>
+  -->
+
+ 
+ 
+
+<script>
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const totalCount = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+  document.getElementById('cart-count').innerText = totalCount;
+}
+
+document.querySelectorAll('.add-to-cart').forEach(button => {
+  button.addEventListener('click', function () {
+    const title = this.getAttribute('data-title');
+    const author = this.getAttribute('data-author');
+    const price = parseFloat(this.getAttribute('data-price'));
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existingIndex = cart.findIndex(item => item.title === title);
+
+    if (existingIndex !== -1) {
+      cart[existingIndex].quantity += 1;
+    } else {
+      cart.push({ title, author, price, quantity: 1 });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    alert(`${title} added to cart!`);
+  });
+});
+
+// Update count on page load
+   updateCartCount();
+</script>
+
+  
+
+  </body>
+  </html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>love Books</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+ .love-books .card {
+    border: none;
+    margin-bottom: 30px;
+     
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+    
+    object-fit: cover;
+  }
+
+
+  .love-books .card img {
+   
+    display : block;
+    width:60%;
+    height:70%;
+  }
+
+  .love-books .card-title {
+    font-weight: 400;
+  }
+      .a{
+  
+  padding:25px;
+  width:310px;
+  }
+  
+    .price-tag {
+      margin-top: 10px;
+      padding: 8px 12px;
+      font-size: 18px;
+       position:relative;
+      left:40px;
+    }
+
+    .price-old {
+      text-decoration: line-through;
+      color: gray;
+      font-size: 16px;
+      margin-right: 8px;
+       position:relative;
+      left:50px;
+    }
+
+    .price-section {
+      padding:5px;
+    }
+  
+    .button {
+  
+    position:relative;
+    left:40px;
+    text-align:center;
+  
+  }
+  
+  .z{
+  
+  position:relative;
+  top:10px;
+
+}
+  
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="home.html">BookStore</a>
+  <div class="ml-auto">
+    <a href="cart.html" class="btn btn-outline-light">
+      🛒 Cart (<span id="cart-count">0</span>)
+    </a>
+  </div>
+</nav>
+
+  <section class=" fluid-container love-books">
+      <div class="row">
+         <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://m.media-amazon.com/images/I/81mAO3JY7PL._UF1000,1000_QL80_.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">LOVE OR OBSESSION</h5>
+                      <p class="card-text">BY HIAH MEHTA</p>
+                  </div>
+                  <div class="price-section">
+                          <span class="price-old">₹249</span>
+                           <span class="price-tag">₹193</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="LOVE OR OBSESSION"
+                              data-author="HIAH MEHTA"
+                              data-price="193">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=love-or" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+          
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://english.cdn.zeenews.com/sites/default/files/2024/10/11/1543062-i-too-had-a-love-story-by-ravinder-singh.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">I TOO HAD A LOVE STORY</h5>
+                      <p class="card-text">BY RAVINDER SINGH</p>
+                  </div>
+                  <div class="price-section">
+                          <span class="price-old">₹250</span>
+                           <span class="price-tag">₹183</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="I TOO HAD A LOVE STORY"
+                              data-author="RAVINDER SINGH"
+                              data-price="183">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=i-too" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+          
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://m.media-amazon.com/images/I/81GJLCL1F2L._UF1000,1000_QL80_.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">A LOVE STORY FROM THE HEART </h5>
+                      <p class="card-text">BY TERRY ATKINSON</p>
+                  </div>
+                  <div class="price-section">
+                          <span class="price-old">₹1478</span>
+                           <span class="price-tag">₹908</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="A LOVE STORY FROM THE HEART"
+                              data-author="TERRY ATKINSON"
+                              data-price="908">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=a-love" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+          
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://m.media-amazon.com/images/I/61lReXCEdzL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">ONE LAST LOVE</h5>
+                      <p class="card-text">BY DEREK  HAINES</p>
+                  </div>
+                  <div class="price-section">
+                          <span class="price-old">₹499</span>
+                           <span class="price-tag">₹345</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="ONE LAST LOVE"
+                              data-author="DEREK  HAINES"
+                              data-price="345">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=one-last" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+          
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqrGm6hpizzLEsgnXPRJWPmlOdgkVin2JMoA&s" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">ECHOES OF LOVE</h5>
+                      <p class="card-text">BY JENNY ASHCROFT</p>
+                  </div>
+                  <div class="price-section">
+                          <span class="price-old">₹1413</span>
+                           <span class="price-tag">₹1195</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="ECHOES OF LOVE"
+                              data-author="JENNY ASHCROFT"
+                              data-price="1195">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=echoes-of" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+           
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://i.pinimg.com/236x/4c/5b/bc/4c5bbc01ba245865bd75dff9787e83ac.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">CAN LOVE HAPPEN TWICE</h5>
+                      <p class="card-text">BY RAVINDER SINGH</p>
+                  </div>
+                  <div class="price-section">
+                          <span class="price-old">₹199</span>
+                           <span class="price-tag">₹184</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="CAN LOVE HAPPEN TWICE"
+                              data-author=" RAVINDER SINGH"
+                              data-price="184">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=can-love" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+           
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://forevershereads.com/wp-content/uploads/2023/09/The-Spanish-Love-Deception-Elena-Armas-640x1024.png" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">THE SPANISH LOVE DECEPTION</h5>
+                      <p class="card-text">BY ELENA ARMAS</p>
+                  </div>
+                  <div class="price-section">
+                          <span class="price-old">₹499</span>
+                           <span class="price-tag">₹430</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="THE SPANISH LOVE DECEPTION"
+                              data-author="ELENA ARMAS"
+                              data-price="430">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=the-spanish" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://m.media-amazon.com/images/I/81KBDJ8ZSjS._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">THE POCKET LOVE STORIES</h5>
+                      <p class="card-text">BY AJITABHA BOSE</p>
+                  </div>
+                  <div class="price-section">
+                          <span class="price-old">₹300</span>
+                           <span class="price-tag">₹180</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="THE POCKET LOVE STORIES"
+                              data-author="AJITABHA BOSE"
+                              data-price="180">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=the-pocket" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781451691566/paris-a-love-story-9781451691566_hr.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">PARIS A LOVE STORY</h5>
+                      <p class="card-text">BY KATI MARTON</p>
+                  </div>
+                  <div class="price-section">
+                          <span class="price-old">1448</span>
+                           <span class="price-tag">₹1279</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="PARIS A LOVE STORY"
+                              data-author="KATI MARTON"
+                              data-price="1279">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=paris-a" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://i0.wp.com/www.zorbabooks.com/wp-content/uploads/2017/04/The-Soulmats-Front-Side.jpg?fit=1555%2C2532&ssl=1" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">THE SOULMATES</h5>
+                      <p class="card-text">BY PRERNA PUJARI</p>
+                  </div>
+                  <div class="price-section">
+                          <span class="price-old">₹149</span>
+                           <span class="price-tag">₹142</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="THE SOULMATES"
+                              data-author="PRERNA PUJARI"
+                              data-price="142">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=the-soulmates" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://cdn.exoticindia.com/images/products/original/books-2019-025/ubi574.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">I LOVE YOU FATE</h5>
+                      <p class="card-text">BY PRAVEEN CHANDRAN</p>
+                  </div>
+                  <div class="price-section">
+                          <span class="price-old">₹300</span>
+                           <span class="price-tag">₹216</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="I LOVE YOU FATE"
+                              data-author="PRAVEEN CHANDRAN"
+                              data-price="216">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=i-love" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://www.bookgeeks.in/wp-content/uploads/2017/04/the-one-you-cannot-have.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">THE ONE YOU CANNOT HAVE</h5>
+                      <p class="card-text">BY PREETI SHENOY</p>
+                  </div>
+                  <div class="price-section">
+                          <span class="price-old">₹319</span>
+                           <span class="price-tag">₹279</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="THE ONE YOU CANNOT HAVE"
+                              data-author="PREETI SHENOY"
+                              data-price="279">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=the-one" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+       </div>
+    </section>
+    
+     <script>
+function updateCartCount() {
+	  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+	  const totalCount = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+	  document.getElementById('cart-count').innerText = totalCount;
+	}
+
+
+document.querySelectorAll('.add-to-cart').forEach(button => {
+  button.addEventListener('click', function () {
+    const title = this.getAttribute('data-title');
+    const author = this.getAttribute('data-author');
+    const price = parseFloat(this.getAttribute('data-price'));
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existingIndex = cart.findIndex(item => item.title === title);
+
+    if (existingIndex !== -1) {
+      cart[existingIndex].quantity += 1;
+    } else {
+      cart.push({ title, author, price, quantity: 1 });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    alert(`${title} added to cart!`);
+  });
+});
+
+// Update count on page load
+   updateCartCount();
+</script>
+    
+</body>
+</html>

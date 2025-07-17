@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Horror Books</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+ .horror-books .card {
+    border: none;
+    margin-bottom: 30px;
+     
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+    
+    object-fit: cover;
+  }
+
+
+  .horror-books .card img {
+   
+    display : block;
+    width:60%;
+    height:70%;
+  }
+
+  .horror-books .card-title {
+    font-weight: 400;
+    position:relative;
+    text-align:center;
+   
+  }
+  
+      .a{
+  
+  padding:25px;
+  width:310px;
+  }
+  
+  .price-tag {
+      margin-top: 10px;
+      padding: 8px 12px;
+      font-size: 18px;
+       position:relative;
+      left:40px;
+    }
+    
+    .d {
+    
+    position:relative;
+    text-align:center;
+    
+    
+    }
+
+    .price-old {
+      text-decoration: line-through;
+      color: gray;
+      font-size: 16px;
+      margin-right: 8px;
+       position:relative;
+      left:50px;
+    }
+
+    .price-section {
+      padding:5px;
+    }
+  
+    .button {
+  
+    position:relative;
+    left:40px;
+    text-align:center;
+  
+  }
+ 
+   .z{
+  
+  position:relative;
+  top:10px;
+
+}
+  
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="home.html">BookStore</a>
+  <div class="ml-auto">
+    <a href="cart.html" class="btn btn-outline-light">
+      🛒 Cart (<span id="cart-count">0</span>)
+    </a>
+  </div>
+</nav>
+
+  <section class=" fluid-container horror-books">
+      <div class="row">
+         <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://img.buzzfeed.com/buzzfeed-static/static/2018-10/5/16/asset/buzzfeed-prod-web-03/sub-buzz-22190-1538769945-1.jpg?downsize=900:*&output-format=auto&output-quality=auto" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">NAOMI'S ROOM</h5>
+                      <p class="card-text , d">BY JANATHAN AYCLIFFE</p>
+                  </div>
+                   <div class="price-section">
+                          <span class="price-old">₹994</span>
+                           <span class="price-tag">₹944</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="NAOMI'S ROOM"
+                              data-author=" JANATHAN AYCLIFFE"
+                              data-price="944">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=naomi's" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+          
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1652100161-3178if2aHgL._SL500_.jpg?crop=1xw:1xh;center,top&resize=980:*" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">THE EXORCIST</h5>
+                      <p class="card-text , d">BY WILLIAM PETER BLATTY</p>
+                  </div>
+                   <div class="price-section">
+                          <span class="price-old">₹550</span>
+                           <span class="price-tag">₹335</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="THE EXORCIST"
+                              data-author="WILLIAM PETER BLATTY"
+                              data-price="335">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=the-exorcist" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+          
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://m.media-amazon.com/images/I/715qjNTdYML._UF1000,1000_QL80_.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">NIGHT OF TERROR</h5>
+                      <p class="card-text , d">BY D.FISCHER</p>
+                  </div>
+                   <div class="price-section">
+                          <span class="price-old">₹2294</span>
+                           <span class="price-tag">₹2019</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="NIGHT OF TERROR"
+                              data-author="  D.FISCHER"
+                              data-price="335">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=night-of" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+          
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://orders.newsfilecorp.com/files/8317/120043_54dd83d4c4b41bd2_001.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">NIGHT GHOST</h5>
+                      <p class="card-text , d">BY NICK C. BRADY</p>
+                  </div>
+                   <div class="price-section">
+                          <span class="price-old">₹5871</span>
+                           <span class="price-tag">₹4892</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="NIGHT GHOST"
+                              data-author="NICK C. BRADY"
+                              data-price="4892">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=night-ghost" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+          
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdo9aZpmKS_EPL2XbngemXnh9Vs9scfRK25iLQ7fTocpaAx1Ksm9cFfmdqKobmBY-_VZQ&usqp=CAU" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">FEAR</h5>
+                      <p class="card-text , d">BY R.L STINE</p>
+                  </div>
+                   <div class="price-section">
+                          <span class="price-old">₹1143</span>
+                           <span class="price-tag">₹800</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="FEAR"
+                              data-author="R.L STINE"
+                              data-price="800">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=fear" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+           
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://img1.od-cdn.com/ImageType-400/0439-1/%7BB29FBF2A-A86F-4639-9345-107F81D1D3E8%7DIMG400.JPG" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">THE OUTSIDER</h5>
+                      <p class="card-text , d">BY STEPHEN KING</p>
+                  </div>
+                   <div class="price-section">
+                          <span class="price-old">₹5495</span>
+                           <span class="price-tag">₹4980</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="THE OUTSIDER"
+                              data-author="STEPHEN KING"
+                              data-price="4980">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=the-outsider" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+           
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://m.media-amazon.com/images/I/71wMuKG2B8L._UF1000,1000_QL80_.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">THE OFFERING</h5>
+                      <p class="card-text , d">BY E.M. ANGUILAR</p>
+                  </div>
+                   <div class="price-section">
+                          <span class="price-old">₹599</span>
+                           <span class="price-tag">₹419</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="THE OFFERING"
+                              data-author=" E.M. ANGUILAR"
+                              data-price="419">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=the-offering" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://vader-prod.s3.amazonaws.com/1658717914-41Mesyqsn7L._SL500_.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">PSYCHO</h5>
+                      <p class="card-text , d">BY ROBERT BLOCH</p>
+                  </div>
+                   <div class="price-section">
+                          <span class="price-old">₹1205</span>
+                           <span class="price-tag">₹1100</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="PSYCHO"
+                              data-author=" ROBERT BLOCH"
+                              data-price="1100">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=psycho" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://m.media-amazon.com/images/I/81NFigovoeL._UF1000,1000_QL80_.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">STAYCATION</h5>
+                      <p class="card-text , d">BY RJ CLARK</p>
+                  </div>
+                   <div class="price-section">
+                          <span class="price-old">₹1353</span>
+                           <span class="price-tag">₹1013</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="STAYCATION"
+                              data-author=" RJ CLARK"
+                              data-price="1013">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=staycation" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://i0.wp.com/booksbonesbuffy.com/wp-content/uploads/2023/10/We-Ate-the-Dark.jpg?w=244&h=377&ssl=1" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">WE ATE THE DARK</h5>
+                      <p class="card-text , d">BY MALLORY PEARSON</p>
+                  </div>
+                   <div class="price-section">
+                          <span class="price-old">₹1935</span>
+                           <span class="price-tag">₹1284</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="WE ATE THE DARK"
+                              data-author=" MALLORY PEARSON"
+                              data-price="1284">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=we-ate" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://m.media-amazon.com/images/I/41p3lZgqvJL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">DREAD THE DARK</h5>
+                      <p class="card-text , d">BY A.C. UTTER</p>
+                  </div>
+                   <div class="price-section">
+                          <span class="price-old">₹277</span>
+                           <span class="price-tag">₹207</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="DREAD THE DARK"
+                              data-author=" A.C. UTTER"
+                              data-price="207">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=dread-the" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://m.media-amazon.com/images/I/41SGHeSjzeL.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">FOREST OF THE DARK</h5>
+                      <p class="card-text , d">BY PALVI SHARMA</p>
+                  </div>
+                   <div class="price-section">
+                          <span class="price-old">₹2591</span>
+                           <span class="price-tag">₹1407</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="FOREST OF THE DARK"
+                              data-author="PALVI SHARMA"
+                              data-price="1407">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=forest-of" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+       </div>
+    </section>
+    
+      <script>
+function updateCartCount() {
+	  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+	  const totalCount = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+	  document.getElementById('cart-count').innerText = totalCount;
+	}
+
+
+document.querySelectorAll('.add-to-cart').forEach(button => {
+  button.addEventListener('click', function () {
+    const title = this.getAttribute('data-title');
+    const author = this.getAttribute('data-author');
+    const price = parseFloat(this.getAttribute('data-price'));
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existingIndex = cart.findIndex(item => item.title === title);
+
+    if (existingIndex !== -1) {
+      cart[existingIndex].quantity += 1;
+    } else {
+      cart.push({ title, author, price, quantity: 1 });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    alert(`${title} added to cart!`);
+  });
+});
+
+// Update count on page load
+   updateCartCount();
+</script>
+    
+</body>
+</html>

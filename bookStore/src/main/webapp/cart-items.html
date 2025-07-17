@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+      <script>
+  function renderCart() {
+    const cartItemsDiv = document.getElementById("cart-items");
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    cartItemsDiv.innerHTML = "<h3>Your Cart:</h3>";
+
+    if (cart.length === 0) {
+      cartItemsDiv.innerHTML += "<p>Your cart is empty.</p>";
+      return;
+    }
+
+    cart.forEach((item, index) => {
+      const itemDiv = document.createElement("div");
+      itemDiv.classList.add("card", "p-3", "m-2");
+
+      itemDiv.innerHTML = `
+        <strong>${item.title}</strong><br>
+        Author: ${item.author}<br>
+        Price: ₹${item.price}<br>
+        <button class="btn btn-danger btn-sm mt-2" onclick="removeFromCart(${index})">Remove</button>
+      `;
+
+      cartItemsDiv.appendChild(itemDiv);
+    });
+
+    document.getElementById("cart-count").innerText = cart.length;
+  }
+
+  function removeFromCart(index) {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.splice(index, 1); // Remove item by index
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCart();
+  }
+
+  // Initial load
+  renderCart();
+</script>
+      
+</body>
+</html>

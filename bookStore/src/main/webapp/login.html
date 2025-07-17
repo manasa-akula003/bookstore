@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .input-field {
+            margin-bottom: 15px;
+            width: 100%;
+        }
+        .input-field input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .input-field input:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .success-message {
+            color: green;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+        <div class="input-field">
+            <input type="text" id="userName" placeholder="UserName" required>
+            <div id="userNameError" class="error-message"></div>
+        </div>
+        <div class="input-field">
+            <input type="password" id="password" placeholder="Password" required>
+            <div id="passwordError" class="error-message"></div>
+        </div>
+        <button type="submit" class="submit-btn">Login</button>
+    </form>
+    <div id="formSuccess" class="success-message"></div>
+    <a href="home.html">Home</a>
+    <a href="#" id="logoutLink">Logout</a>
+    
+</div>
+
+<script>
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const formData = {
+        userName: document.getElementById('userName').value,
+        password: document.getElementById('password').value
+    };
+
+    fetch('http://localhost:8081/bookStore/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData)
+    })
+   .then(response => {
+    console.log('Raw response:', response);
+    return response.json();
+})
+.then(data => {
+    console.log('Parsed JSON:', data);
+    if (data.status === 'success') {
+        alert(data.message);
+        window.location.href = 'home.html';
+    } else {
+        alert(data.message || 'Invalid credentials.');
+    }
+})
+.catch(error => {
+    console.error('Fetch error:', error);
+    alert('Login failed. Please try again later.');
+});
+
+   
+
+
+function clearMessages() {
+    document.getElementById('userNameError').textContent = "";
+    document.getElementById('passwordError').textContent = "";
+    document.getElementById('formSuccess').textContent = "";
+
+}
+});
+console.log("Sending form data:", formData);
+
+</script>
+
+<script>
+  // Logout handler
+  document.getElementById('logoutLink').addEventListener('click', function (e) {
+    e.preventDefault();
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('userEmail'); // if you stored email
+    // Optional: clear all
+    // localStorage.clear();
+    alert('You have been logged out.');
+    window.location.href = 'login.html';
+  });
+
+  // Optional: hide logout link if not logged in
+  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+  if (!isLoggedIn) {
+    document.getElementById('logoutLink').style.display = 'none';
+  }
+  
+  localStorage.setItem('isLoggedIn', 'true');
+  localStorage.setItem('userEmail', formData.userName);
+
+</script>
+
+
+</body>
+</html>

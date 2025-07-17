@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book Details</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+      background-color: #f7f9fb;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    img {
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+    h1 {
+      font-size: 28px;
+    }
+    .price {
+      color: green;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .author {
+      color: #555;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .description {
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="book-title">Loading...</h1>
+    <div class="author" id="book-author"></div>
+    <div class="price" id="book-price"></div>
+    <img id="book-image" src="" alt="Book Cover">
+    <p class="description" id="book-description"></p>
+  </div>
+
+  <script>
+    const books = {
+      "the-skittering": {
+        title: "The Skittering and Other Tales",
+        author: "Toney R Tucker",
+        price: "₹450",
+        image: "https://miblart.com/wp-content/uploads/2020/10/2LTd4fOY.jpeg",
+        description: "A spooky collection of thrilling tales that tingle your spine and stir your imagination."
+      },
+      "harry-potter": {
+        title: "Harry Potter and The Philosopher's Stone",
+        author: "J.K. Rowling",
+        price: "₹374",
+        image: "https://m.media-amazon.com/images/I/81q77Q39nEL._AC_UF1000,1000_QL80_.jpg",
+        description: "Harry discovers he is a wizard and begins his magical journey at Hogwarts."
+      },
+      "those-eyes": {
+          title: "Those Eyes",
+          author: "Raymond Bechkam  Darius cook",
+          price: "₹380",
+          image: "https://miblart.com/wp-content/uploads/2020/10/Raymond-Beckham-683x1024.jpg",
+          description: "tells the story of five seemingly unrelated individuals whose lives unexpectedly intertwine."
+        },
+      "the-women": {
+          title: "The Women In The Castle",
+          author: "Jessica Shattuck",
+          price: "₹280",
+          image: "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1556908404-51iPvEjUwnL.jpg?crop=1xw:1xh;center,top&resize=480:*",
+          description: "about three German women during and after World War II."
+        },
+      "my-quiet": {
+          title: "My quiet imagination",
+          author: "Paulo Coelho",
+          price: "₹419",
+          image: "https://getcovers.com/wp-content/uploads/2020/12/image15-1-1.jpg",
+          description: "a rich inner world filled with creative ideas that develop at a more subtle, introspective pace."
+        },
+      "a-good": {
+          title: "A Good Girl's Guide To Murder",
+          author: "Holly Jackson",
+          price: "₹299",
+          image: "https://artworks.thetvdb.com/banners/v4/series/430061/posters/65f8b6dc55cb1.jpg",
+          description: "Pretty and popular high school senior Andie Bell was murdered by her boyfriend, Sal Singh, who then killed himself."
+        },
+      "never-lie": {
+          title: "Never-Lie",
+          author: "Freida McFadden",
+          price: "₹320",
+          image: "https://m.media-amazon.com/images/I/8196x-1wIOL._UF1000,1000_QL80_.jpg",
+          description: "a psychological thriller about a couple, Tricia and Ethan, who become trapped in a remote mansion during a snowstorm."
+        },
+      "the-silent": {
+          title: "The Silent Patient",
+          author: "Alex Michaelides",
+          price: "₹390",
+          image: "https://m.media-amazon.com/images/I/91lslnZ-btL._AC_UF1000,1000_QL80_.jpg",
+          description: "tells the story of Alicia Berenson, a painter who shoots her husband five times and then refuses to speak."
+        },
+      "the-secret": {
+          title: "The secret",
+          author: " Rhonda Byrne",
+          price: "₹517",
+          image: "https://m.media-amazon.com/images/I/81MQh7LndSL._SY385_.jpg",
+          description: "promotes the idea that thoughts are magnetic and attract corresponding events into one's life, a concept known as the law of attraction."
+        },
+      "dopamine-detox": {
+          title: "Dopamine Detox",
+          author: "Thibaut Meurisse",
+          price: "₹399",
+          image: "https://m.media-amazon.com/images/I/712K3sdLlRL.jpg",
+          description: "temporarily reducing exposure to activities that trigger dopamine release,like social media or excessive entertainment, with the goal of reducing reliance on instant gratification and improving focus and mental clarity. "
+        },
+      "the-power": {
+          title: "The Power Of Your Subconcious Mind",
+          author: "Dr.Joseph Murphy",
+          price: "₹459",
+          image: "https://m.media-amazon.com/images/I/81gTwYAhU7L.jpg",
+          description: "It's a vast, reactive realm that accepts and acts upon the suggestions and beliefs planted by the conscious mind, influencing emotions, habits, and even physical well-being."
+        },
+      "Panchatantra": {
+          title: "Panchatantra",
+          author: "J.K. Rowling",
+          price: "₹80",
+          image: "https://m.media-amazon.com/images/I/81xqg04BTLL._AC_UF1000,1000_QL80_.jpg",
+          description: "an ancient Indian collection of interrelated animal fables and moral tales, primarily aimed at teaching young princes the principles of wise governance and social conduct."
+        },
+        "bhagavad-geta": {
+            title: "Bhagavad geta",
+            author: "A.C.Bhaktivedanta Swami Prabhupada",
+            price: "₹365",
+            image: "https://m.media-amazon.com/images/I/81YC6O+-qbL._AC_UF1000,1000_QL80_.jpg",
+            description: "Song of God is a 700-verse Hindu scripture that forms part of the epic Mahabharata."
+          },
+        "white-mughals": {
+            title: "WHITE MUGHALS",
+            author: "WILLIAM DALRYMPLE",
+            price: "₹499",
+            image: "https://images.cdn2.buscalibre.com/fit-in/360x360/09/8a/098a95c3696d964cf954301032557c8f.jpg",
+            description: "British men working for the East India Company in 18th and 19th century India who adopted aspects of Indian culture and lifestyle. "
+          },
+      "the-art": {
+       title: "The Art Of Being Alone",
+       author: "Renuka Gavrani",
+       price: "₹99",
+       image: "https://www.crossword.in/cdn/shop/files/61Ktyy7KymL._SL1500.jpg?v=1704174640",
+       description: " the practice of cultivating a positive and fulfilling relationship with oneself, transforming solitude from a source of loneliness into a space for self-discovery and personal growth. "
+     },
+     "the-monk": {
+       title: "The Monk Who Sold His Ferrari",
+       author: "Robin Sharma",
+       price: "₹199",
+       image: "https://i.pinimg.com/236x/0a/f5/e7/0af5e7201a53acd2b102faf75ddbd12c.jpg",
+       description: "tells the story of Julian Mantle, a successful but unhappy lawyer. After a heart attack, he sells his possessions, including his Ferrari, and embarks on a journey to India to learn from sages in the Himalayas."
+     },
+     "krishna": {
+         title: "Krishna: The Man and His Philosophy",
+         author: "Osho",
+         price: "₹362",
+         image: "https://m.media-amazon.com/images/I/71IbfWECC0L._AC_UF1000,1000_QL80_.jpg",
+         description: "exploring the life and teachings of Lord Krishna, a central figure in Hinduism. "
+       },
+     "betime-stories": {
+         title: "BedTime Stories For Kids",
+         author: "Alex Fabler",
+         price: "₹120",
+         image: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1647752735i/60651812.jpg",
+         description: "Short bedtime stories for kids should not only serve as methods of entertainment but also aim to enrich a child's personality, helping them in the long term."
+       },
+     "the-mountain": {
+         title: "The Mountain Is You",
+         author: "Brianna Wiest",
+         price: "₹259",
+         image: "https://imgv2-2-f.scribdassets.com/img/word_document/487835881/original/216x287/26c847007f/1741538964?v=1ssss",
+         description:"explores the concept of self-sabotage and how to overcome it."
+       },
+     "twisted-lies": {
+         title: "Twisted Lies",
+         author: "Ana Huang",
+         price: "₹399",
+         image: "https://anahuang.com/wp-content/uploads/2023/02/Screen-Shot-2023-02-10-at-11.47.40-AM.png",
+         description:"a new adult romance."
+       },
+     "power": {
+         title: "Power",
+         author: "Robert  Greene",
+         price: "₹374",
+         image: "https://powerseductionandwar.com/wp-content/uploads/2024/02/The-48-Laws-of-Power-1.jpg",
+         description: "a non-fiction book that explores the dynamics of power and influence, drawing from history, philosophy, and psychology. "
+       },
+     "a-thousand": {
+         title: "A Thousand Splendid Suns",
+         author: "Khaled Hosseini",
+         price: "₹375",
+         image: "https://m.media-amazon.com/images/I/81xIPfJ6iUL.jpg",
+         description: "Mariam, an illegitimate teenager from Herat, is forced to marry a shoemaker from Kabul after a family tragedy."
+       },
+     "the-kite": {
+         title: "The Kite Runner",
+         author: " Khaled Hosseini",
+         price: "₹375",
+         image: "https://m.media-amazon.com/images/I/81IzbD2IiIL.jpg",
+         description: "  explores themes of friendship, betrayal, redemption, and the impact of war on individuals and a nation, particularly Afghanistan. "
+     },
+     "i-don't": {
+         title: "I Don't Love You Anymore",
+         author: "Rithvik singh",
+         price: "₹399",
+         image: "https://apollo.olx.in/v1/files/g4bz5v7z64d32-IN/image",
+         description: "a book that explores the complex emotions surrounding the end of a relationship, specifically focusing on the journey of moving on and finding healing. "
+       },
+     "rock-paper": {
+         title: "Rock Paper Scissors",
+         author: "Alice Feeney",
+         price: "₹313",
+         image: "https://m.media-amazon.com/images/I/91pZXkHgVTL._AC_UF1000,1000_QL80_.jpg",
+         description: "a hand game for two or more players where each player simultaneously forms one of three shapes with their hand: rock (a fist), paper (a flat hand), or scissors (two fingers extended). "
+       },
+     "ikigai": {
+         title: "Ikigai",
+         author: "Hector Garcia and Francesc Miralles",
+         price: "₹1520",
+         image: "https://m.media-amazon.com/images/I/81l3rZK4lnL.jpg",
+         description:"a reason for being or a reason to get out of bed in the morning."
+       },
+       "the-housemaid": {
+           title: "The HouseMaid",
+           author: "Freida McFadden",
+           price: "₹209",
+           image: "https://m.media-amazon.com/images/I/8105fcMAVyL._UF1000,1000_QL80_.jpg",
+           description: "a person who performs cleaning and other household tasks in a residential setting."
+         },
+       "can-we": {
+           title: "Can We Be Strangers Again?",
+           author: "Shrijeet Shandilya",
+           price: "₹222",
+           image: "https://rukminim2.flixcart.com/image/850/1000/xif0q/book/w/l/y/can-we-be-strangers-again-original-imah9nm5suxrhh37.jpeg?q=90&crop=false",
+           description: "In the electric haze of college life, three friends are bound by laughter, late-night talks and unspoken promises. But when two of them cross the line from friendship into love, everything changes. "
+         },
+         "powerless": {
+             title: "PowerLess",
+             author: "Lauren Roberts",
+             price: "₹1382",
+             image: "https://img1.od-cdn.com/ImageType-100/5054-1/%7BD35946A6-6E62-4594-A21C-70B693BF6B37%7DIMG100.JPG",
+             description:"lacking strength, influence, or control."
+           },
+         "hunting-adeline": {
+             title: "Hunting Adeline",
+             author: "H.D Cartlon",
+             price: "₹1219",
+             image: "https://m.media-amazon.com/images/I/91XZ3hDcXxL._AC_UF1000,1000_QL80_.jpg",
+             description:"a captivating novel that delves into the depths of human nature and the pursuit of justice. "
+           },
+         "surrounded-by": {
+             title: "Surrounded By Idiots",
+             author: "thomas erikson",
+             price: "₹2117",
+             image: "https://m.media-amazon.com/images/I/71K7nN6Mu+L.jpg",
+             description: "explores human behavior and communication styles through the lens of four personality types, color-coded as Red, Yellow, Green, and Blue "
+           },              
+           "naomi's": {
+               title: "NAOMI'S ROOM",
+               author: "JANATHAN AYCLIFFE",
+               price: "₹944",
+               image: "https://img.buzzfeed.com/buzzfeed-static/static/2018-10/5/16/asset/buzzfeed-prod-web-03/sub-buzz-22190-1538769945-1.jpg?downsize=900:*&output-format=auto&output-quality=auto",
+               description: "a place of innocence and joy initially, a young couple's cherished space for their daughter. "
+             },
+             "the-exorcist": {
+               title: "THE EXORCIST",
+               author: "WILLIAM PETER BLATTY",
+               price: "₹335",
+               image: "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1652100161-3178if2aHgL._SL500_.jpg?crop=1xw:1xh;center,top&resize=980:*",
+               description: "a person, often associated with religious traditions, who performs the ritual of exorcism to cast out demons or other malevolent spirits believed to be possessing a person, place, or object."
+             },
+             "night-of": {
+                 title: "NIGHT OF TERROR",
+                 author: "D.FISCHER",
+                 price: "₹2019",
+                 image: "https://m.media-amazon.com/images/I/715qjNTdYML._UF1000,1000_QL80_.jpg",
+                 description: "a situation filled with intense fear, panic, or horror, often involving a series of frightening events or experiences. "
+               },
+             "night-ghost": {
+                 title: "NIGHT GHOST",
+                 author: "NICK C. BRADY",
+                 price: "₹4892",
+                 image: "https://orders.newsfilecorp.com/files/8317/120043_54dd83d4c4b41bd2_001.jpg",
+                 description: "a shadowy, ephemeral figure, or a vague, indistinct form, sometimes with a ghostly white appearance, and often associated with a sense of dread or unease."
+               },
+             "fear": {
+                 title: "Fear",
+                 author: "R.L STINE",
+                 price: "₹800",
+                 image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdo9aZpmKS_EPL2XbngemXnh9Vs9scfRK25iLQ7fTocpaAx1Ksm9cFfmdqKobmBY-_VZQ&usqp=CAU ",
+                 description: "a distressing feeling aroused by impending danger, evil, pain, or the threat of harm, whether the threat is real or imagined."
+               },
+             "the-outsider": {
+                 title: "the outsider",
+                 author: "STEPHEN KING",
+                 price: "₹4980",
+                 image: "https://img1.od-cdn.com/ImageType-400/0439-1/%7BB29FBF2A-A86F-4639-9345-107F81D1D3E8%7DIMG400.JPG",
+                 description: "someone who is not part of a specific group, community, or social context, often experiencing a sense of alienation or otherness. "
+               },
+             "the-offering": {
+                 title: "the offering",
+                 author: "E.M. ANGUILAR",
+                 price: "₹419",
+                 image: "https://m.media-amazon.com/images/I/71wMuKG2B8L._UF1000,1000_QL80_.jpg",
+                 description: " something presented as a gift, a sacrifice, or something offered for sale or consideration."
+               },
+             "psycho": {
+                 title: "PSYCHO",
+                 author: "ROBERT BLOCH",
+                 price: "₹1100",
+                 image: "https://vader-prod.s3.amazonaws.com/1658717914-41Mesyqsn7L._SL500_.jpg",
+                 description: "someone who is mentally unstable or emotionally erratic, particularly in a way that leads to dangerous or violent behavior."
+               },
+             "staycation": {
+                 title: "STAYCATION",
+                 author: " RJ CLARK",
+                 price: "₹1013",
+                 image: "https://m.media-amazon.com/images/I/81NFigovoeL._UF1000,1000_QL80_.jpg",
+                 description: " a vacation spent in your local area or at home, rather than traveling to a distant destination. "
+               },
+             "we-ate": {
+                 title: "WE ATE THE DARK",
+                 author: "MALLORY PEARSON",
+                 price: "₹1284",
+                 image: "https://i0.wp.com/booksbonesbuffy.com/wp-content/uploads/2023/10/We-Ate-the-Dark.jpg?w=244&h=377&ssl=1",
+                 description: "a terrifying exploration of good and evil, love and death, and the spaces between. "
+               },
+             "dread-the": {
+                 title: "DREAD THE DARK",
+                 author: "A.C. UTTER",
+                 price: "₹207",
+                 image: "https://m.media-amazon.com/images/I/41p3lZgqvJL._AC_UF1000,1000_QL80_.jpg",
+                 description: "a collection of horror stories or a specific story where the darkness itself is a source of fear and dread. "
+               },
+             "forest-of": {
+                 title: "FOREST OF THE DARK",
+                 author: "PALVI SHARMA",
+                 price: "₹1407",
+                 image: "https://m.media-amazon.com/images/I/41SGHeSjzeL.jpg",
+                 description: "a place of shadows, where sunlight struggles to penetrate the dense canopy, creating an eerie and mysterious atmosphere. "
+               },
+               "dairy-of": {
+                   title: "DAIRY OF A WIMPY KID",
+                   author: "JEFF KINNEY",
+                   price: "₹266",
+                   image: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388183826i/389627._UX187_.jpg",
+                   description: "a popular children's book series written and illustrated by Jeff Kinney, featuring the humorous exploits of Greg Heffley as he navigates middle school."
+                 },
+                 "life-is": {
+                   title: "life is funny",
+                   author: "SEVEN MUNSON",
+                   price: "₹1186",
+                   image: "https://www.adazing.com/wp-content/uploads/2019/03/41Nd0g7fBFL._SX311_BO1204203200_.jpg",
+                   description: "Life is Funny contains 129 random, ridiculous, and sometimes inappropriate observations about life, people, and the stupid situations we find ourselves in on a daily basis. It will forever change your view on life."
+                 },
+                 "best-jokes": {
+                     title: "BEST JOKES AND FUNNY SHORTS STORIES",
+                     author: "KRISANTA BELLA",
+                     price: "₹200",
+                     image: "https://m.media-amazon.com/images/I/71kGv7OKr6L._UF1000,1000_QL80_DpWeblab_.jpg",
+                     description: "When we laugh, we get short term benefits such as laughter stimulates many organs, active and relieve our stress response and laughter soothes tension. Laughing also gives us long term effects as well, it improves our immune system, relieves pain, increase personal satisfaction and improves our mood. Laughter is really a great medicine, and most of the time it is free. You may just have a funny conversation with your family or friends, watch a funny movie or sitcom, or just ready funny books."
+                   },
+                 "the-idiot": {
+                     title: "the idiot",
+                     author: "ELIF BATUMAN",
+                     price: "₹336",
+                     image: "https://hips.hearstapps.com/hmg-prod/images/elifbatumantheidiot-1611137199.jpg",
+                     description: "a complex novel exploring themes of innocence, morality, and the clash between goodness and societal corruption."
+                   },
+                 "at-swim": {
+                     title: "AT SWIM TWO BIRDS",
+                     author: "FLANN O'BRIEN",
+                     price: "₹464",
+                     image: "https://book-assets.openroadmedia.com/9781504059657.jpg",
+                     description: "The novel centers around an unnamed Dublin student who is writing a novel featuring a character named Dermot Trellis, who in turn creates his own characters who then rebel against him."
+                   },
+                 "funny-stores": {
+                     title: "funny stories",
+                     author: "EMILEY HENRY",
+                     price: "₹970",
+                     image: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1691777485i/194802722.jpg",
+                     description:"Daphne always loved the way her fiancé, Peter, told their story. How they met (on a blustery day), fell in love (over an errant hat), and moved back to his lakeside hometown to begin their life together. He really was good at telling it... right up until the moment he realized he was actually in love with his childhood best friend Petra."
+                   },
+                 "all-my": {
+                     title: "ALL MY FRIENDS ARE STILL DEAD",
+                     author: "AVERY MONSEN AND JORY JOHN",
+                     price: "₹789",
+                     image: "https://images-cdn.ubuy.co.in/65085cc8df770d7314047bba-all-my-friends-are-still-dead-funny.jpg",
+                     description: "a brand-new illustrated compendium of the humorous existential ruminations of people, animals, legendary monsters, and inanimate objects."
+                   },
+                 "jokes": {
+                     title: "jokes",
+                     author: "GEORGE SMITH",
+                     price: "₹920",
+                     image: "https://m.media-amazon.com/images/I/71kbujpB8OL._AC_UF1000,1000_QL80_.jpg",
+                     description: "Kids can’t resist sharing jokes (even you try to stop them), so they always need a fresh supply. We’ve stuffed the pages of this little joke book with the funniest jokes we could find. Old favorites, new favorites, and a few festering stinkers, all guaranteed to make kids laugh out loud. You’ll find Q&A jokes, knock-knock jokes, riddles, and one-liners. And, of course, we’ve included entire chapters of those all-time kid-pleasers: elephant jokes, pirate jokes, and space jokes. Here’s a sampling:."
+                   },
+                 "when-mum": {
+                     title: "WHEN MUM WENT FUNNY",
+                     author: "JACK LASENBY",
+                     price: "₹240",
+                     image: "https://cdn2.penguin.com.au/covers/original/9781775531180.jpg",
+                     description: "It's war-time and Dad's away, so Mum has to run the farm. Sometimes the stress of it all gives her funny ideas, in this hilarious tale by a much-loved, award-winning junior fiction author. 'You wait till Constable Cuff hears about this . We're going to tell everybody in the district you sold your children for sixpence.' In When Mum Went Funny, the cry of mothers everywhere is heard loud and clear. Ideas like trying to sell off the children, making nail soup and sleeping out in a haystack to catch whoever's 'bandicooting' the potatoes. When Mum gets that look in her eye, the children go on high alert. They watch Kate, to see how worried they should be, because Kate, the eldest, is an even match for her Mother. Their frequent battles of wit and will-power keeps everyone entertained. In spite of Mum's tricks and grumbles, she never loses control; the children know they can rely on her, even as they try to frustrate her at every turn. Mum's mischievous tugging at the rug under her children's feet provides lots of delicious fun and fretful anxiety.In this gently comic novel, Lasenby draws a heart-warming but unsentimental portrait of a family and community under duress, and of a mother who channels her exasperations into inventive ploys that not only help save her own sanity, but also bring grist and intrigue to family life."
+                   },
+                 "what's-so": {
+                     title: "WHAT'S SO FUNNY",
+                     author: "RACHEL CHAIET",
+                     price: "₹4908",
+                     image: "https://m.media-amazon.com/images/I/61TySErhiRL._AC_UF1000,1000_QL80_.jpg",
+                     description: "Describe the main plot, theme, or idea only. "
+                   },
+                 "it-this": {
+                     title: "IS THIS IT?",
+                     author: "HANNAH TOVEY",
+                     price: "₹419",
+                     image: "https://neobooksandcoffee.com/images/thumbs/018/0185348_9780349424712_400.jpeg",
+                     description: "lean, energetic sound, minimalist production, and catchy, laconic melodies."
+                   },
+                 "skippy-dies": {
+                     title: "SKIPPY DIES",
+                     author: "PAUL MURRAY",
+                     price: "₹1816",
+                     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtNAyg7ZG5eCMakK3xK_sHRreR11YVdGyxAg&s",
+                     description: "a novel by Paul Murray that follows the story of Daniel Skippy Juster, a 14-year-old boy who dies unexpectedly at the beginning of the book during a donut-eating contest."
+                   },
+                   
+                   "the-silent": {
+                   title: "THE SILENT PATIENT",
+                   author: "ALEX MICHAELIDES",
+                   price: "₹261",
+                   image: "https://novelonmymind.com/wp-content/uploads/2023/03/The-Silent-Patient-by-Alex-Michaelides.jpg",
+                   description: "a psychological thriller about Alicia Berenson, a famous painter who shoots her husband five times and then falls silent, refusing to speak another word."
+                 },
+                 "deadly-still": {
+                   title: "DEADLY STILL WATER",
+                   author: "ROGER STELLJES",
+                   price: "₹346",
+                   image: "https://dm989u341afjd.cloudfront.net/wp-content/uploads/2018/02/23173634/B005WUVLAG.01.LZZZZZZZ.jpg",
+                   description: "Shannon hustled to her car and dug deep into her black purse, searching for her car keys. He quickly clamped his hand over her mouth as she screamed and thrashed, slid the van door open, and dragged her inside. She desperately tried to scream through the duct tape pasted over her mouth...it was only the beginning."
+                 },
+                 "death-in": {
+                     title: "DEATH IN A LONELY PLACE",
+                     author: "STIG ABELL",
+                     price: "₹1506",
+                     image: "https://m.media-amazon.com/images/I/81HdqDzVJDL._AC_UF1000,1000_QL80_.jpg",
+                     description: "Detective Jake Jackson left London for a quiet life in Caelum Parvum. The idyllic country village offers the peace he craves—tending to his chickens, swimming in his lake, and spending long, lazy evenings with his new love, Livia. It’s the perfect setting for their relationship to blossom."
+                   },
+                 "the-housemaid": {
+                     title: "THE HOUSEMAID",
+                     author: "FREIDA McFADDEN",
+                     price: "₹275",
+                     image: "https://novelonmymind.com/wp-content/uploads/2023/03/The-Housemaid-by-Freida-McFadden.jpg",
+                     description:"When the town sees a spate of vicious crimes and Emmy Grey disappears, Leah begins to realize how very little she knows about her friend and roommate. Unable to find friends, family, a paper trail or a digital footprint, the police question whether Emmy Grey existed at all. And mark Leah as a prime suspect."
+                   },
+                 "the-perfect": {
+                     title: "THE PERFECT STRANGER",
+                     author: " MEGAN MIRANDA",
+                     price: "₹799",
+                     image: "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781501107993/the-perfect-stranger-9781501107993_lg.jpg",
+                     description:"  When the town sees a spate of vicious crimes and Emmy Grey disappears, Leah begins to realize how very little she knows about her friend and roommate. Unable to find friends, family, a paper trail or a digital footprint, the police question whether Emmy Grey existed at all. And mark Leah as a prime suspect."
+                   },
+                 "misery": {
+                     title: "MISERY",
+                     author: "STEPHEN KING",
+                     price: "₹375",
+                     image: "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1688051408-71Nz2T23lSL.jpg?crop=1xw:1xh;center,top&resize=980:*",
+                     description: "King's Classic bestseller about a famous novelist held hostage by his Number One Fan.Misery Chastain is dead. Paul Sheldon has just killed her - with relief, with joy. Misery has made him rich; she was the heroine of a string of bestsellers. And now he wants to get on to some real writing.That's when the car accident happens, and he wakes up in pain in a strange bed. But it isn't hospital. Annie Wilkes has pulled him from the wreck, brought him to her remote mountain home, splinted and set his mangled legs.The good news is that Annie was a nurse and has pain-killing drugs. The bad news is that she has long been Paul's Number One Fan. And when she finds out what Paul had done to Misery, she doesn't like it. She doesn't like it at all. Paul Sheldon used to write for a living. Now he's writing to stay alive."
+                   },
+                 "a-flicker": {
+                     title: "A FLICKER IN THE DARK",
+                     author: "STACY WILLINGHAM",
+                     price: "₹422",
+                     image: "https://hips.hearstapps.com/hmg-prod/images/a-flicker-in-the-dark-1674490210.jpg?crop=1xw:1xh;center,top&resize=980:*",
+                     description: "When Chloe Davis was twelve, six teenage girls went missing in her small Louisiana town. By the end of the summer, her own father had confessed to the crimes and was put away for life, leaving Chloe and the rest of her family to grapple with the truth and try to move forward while dealing with the aftermath.	"
+                   },
+                 "the-house": {
+                     title: "THE HOUSE IN THE PINES",
+                     author: "ANA REYES",
+                     price: "₹799",
+                     image: "https://booksrun.com/blog/wp-content/uploads/2023/10/pines.png",
+                     description: "Armed with only hazy memories, a woman who long ago witnessed her friend’s sudden, mysterious death, and has since spent her life trying to forget, sets out to track down answers. What she uncovers, deep in the woods, is hardly to be believed"
+                   },
+                 "the-hidden": {
+                     title: "THE HIDDEN GIRLS",
+                     author: "REBECCA WHITNEY",
+                     price: "₹450",
+                     image: "https://aboxofstories.com/cdn/shop/articles/the-best-thriller-books-of-2020-so-far-266079.jpg?v=1725865975",
+                     description: "So, when she hears a scream from the local petrol station one night, she initially decides it must be her mind playing tricks again. The police, too, are polite but firm: she must stop calling them every time she thinks she hears something. And her husband is frustrated: he’d hoped Ruth was getting better at last.."
+                   },
+                 "the-hunger": {
+                     title: "THE HUNGER",
+                     author: "STEPHEN KING",
+                     price: "₹1844",
+                     image: "https://images3.penguinrandomhouse.com/cover/9780735212534",
+                     description: "Eternal youth is a wonderful thing for the few who have it, but for Miriam Blaylock, it is a curse -- an existence marred by death and sorrow. Because for the everlasting Miriam, everyone she loves withers and dies. Now, haunted by signs of her adoring husband's imminent demise, Miriam sets out in serach of a new partner, one who can quench her thirst for love and withstand the test of time. She finds it in the beautiful Sarah Roberts, a brilliant young scientist who may hold the secret to immortality. But one thing stands between the intoxicating Miriam Blaylock and the object of her desire: Dr. Tom Haver...and he's about to realize that love and death to hand in hand. "
+                   },
+                 "thicker-than": {
+                     title: "THICKER THAN WATER",
+                     author: "MEGAN COLLINS",
+                     price: "₹2023",
+                     image: "https://media1.popsugar-assets.com/files/thumbor/CviKQB1axePG9pLteyZHAXMhwKI=/fit-in/792x1195/filters:format_auto():upscale()/2023/06/26/064/n/48847894/e72801c513cf8962_Thicker_Than_Water_Megan_Collins.jpeg",
+                     description: "In Thicker than Water, Washington gives readers an intimate view into both her public and private worlds—as a mother, daughter, wife, artist, advocate, and trailblazer. Chronicling her upbringing and life’s journey thus far, she reveals how she faced a series of challenges and setbacks, effectively hid childhood traumas, met extraordinary mentors, managed to grow her career, and crossed the threshold into stardom and political advocacy, ultimately discovering her truest self and, with it, a deeper sense of belonging."
+                   },
+                 "that-thriller": {
+                     title: "THAT THRILLER NIGHT",
+                     author: " NIBEDITA DAS",
+                     price: "₹150",
+                     image: "https://m.media-amazon.com/images/I/618z0BiO2qL._AC_UF1000,1000_QL80_.jpg",
+                     description: "It was a dark and stormy night. It was raining cats and dogs and you couldn't even see the road. All you needed was shelter. Aniket took a cab and settled happily. The cab entered a bushy forest road passing through the mountains. He took a nap. Suddenly the cab stopped, and he realized that he was trapped by a group of strangers pointing guns towards him. He got scared and came out of the cab. Guns were still pointing towards him. They started searching every nook and corner of the cab.When the boot space is opened, the lightning illuminated the boot space and all were shocked and starred for a while.What a bad dream! "
+                   },
+                   "the-phoenix": {
+                       title: "THE PHOENIX OF DESTINY",
+                       author: "GERONIMO STILTON",
+                       price: "₹880",
+                       image: "https://gumlet.assettype.com/down-to-earth%2Fimport%2Flibrary%2Flarge%2F2020-04-04%2F0.90443600_1586004689_book-reading.jpg",
+                       description: "a fantasy adventure book from the Geronimo Stilton Kingdom of Fantasy series, where Geronimo Stilton is summoned to the magical world to complete a quest for Queen Blossom."
+                     },
+                     "pinochio": {
+                       title: "PINOCCHIO",
+                       author: "J.B  KAUFMAN",
+                       price: "₹4628",
+                       image: "https://wordery.com/jackets/c937e2e9/disney-pinocchio-the-story-of-pinocchio-parragon-books-ltd-9781474850490.jpg",
+                       description: " The story revolves around Pinocchio, a wooden puppet brought to life by Geppetto, a poor woodcarver. Pinocchio's primary desire is to become a real boy, but his mischievous nature and tendency to lie lead him into numerous adventures and misadventures."
+                     },
+                     "the-lion": {
+                         title: "THE LION AND THE MOUSE",
+                         author: "WONDER HOUSE BOOKS",
+                         price: "₹993",
+                         image: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1456931249i/16168335.jpg",
+                         description: "a powerful lion and a tiny mouse who form an unlikely friendship. The story highlights the value of kindness and how even the smallest creature can offer significant help. In the tale, a lion, initially angered by a mouse disturbing his nap, spares the mouse's life after the mouse pleads for mercy."
+                       },
+                     "the-cherry": {
+                         title: "THE CHERRY TREE",
+                         author: "RUSKIN BOND",
+                         price: "₹170",
+                         image: "https://m.media-amazon.com/images/I/61x6zIHtJeL._SY445_SX342_.jpg",
+                         description: "tells the story of a young boy named Rakesh who plants a cherry seed and nurtures it as it grows into a tree. The story follows Rakesh's journey as he cares for the tree through various seasons, facing challenges like monsoon rains, a hungry goat, and even a grass cutter."
+                       },
+                     "the-elephant": {
+                         title: "THE ELEPHANT'S CHILD",
+                         author: "LAURA WATSON",
+                         price: "₹1176",
+                         image: "https://images.booksense.com/images/506/870/9798555870506.jpg",
+                         description: " a young elephant known for his insatiable curiosity and constant questioning, particularly about what the crocodile eats for dinner. He's described as having a short snout before his trunk develops, and his curiosity often gets him into trouble."
+                       },
+                     "the-hare": {
+                         title: "THE HARE AND THE TORTOISE",
+                         author: "DANIEL HOWARTH",
+                         price: "₹419",
+                         image: "https://booksandyou.in/cdn/shop/files/UsborneFirstReadingL4TheHareandtheTortoise_1.jpg?v=1708072250&width=713",
+                         description: "the Hare is portrayed as a speedy, arrogant creature who is easily distracted and overconfident. The Tortoise, on the other hand, is slow but steady, demonstrating perseverance and a lack of self-doubt. "
+                       },
+                     "jokes": {
+                         title: "JOKES",
+                         author: "GEORGE SMITH",
+                         price: "₹968",
+                         image: "https://m.media-amazon.com/images/I/71kbujpB8OL._AC_UF1000,1000_QL80_.jpg",
+                         description: "This joke book is full of funny, family-friendly jokes. It's filled with clever and witty short stories and dialogues that allow readers to create vivid mental pictures in their minds. This skill of visualization is key to language acquisition and reading comprehension – and it makes the jokes truly funny!"
+                       },
+                     "the-bed": {
+                         title: "THE BED BOOK",
+                         author: "SYLVIA PLATH",
+                         price: "₹1980",
+                         image: "https://s26162.pcdn.co/wp-content/uploads/2018/08/12027132845-225x300.jpg",
+                         description: " a whimsical children's book that reimagines the concept of bedtime. Instead of ordinary beds, it features a variety of fantastical and playful beds, like a rocket bed, a snack bed, and an elephant bed. It's a celebration of imagination and creativity, offering a delightful twist on the traditional bedtime story. "
+                       },
+                     "charlotte's-web": {
+                         title: "CHARLOTTE'S WEB",
+                         author: "STUART LITTLE",
+                         price: "₹295",
+                         image: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1628267712i/24178._UX187_.jpg",
+                         description: "about a pig named Wilbur and his friendship with a spider named Charlotte. The story follows Wilbur, who is initially saved from being slaughtered by the young girl Fern, then befriends Charlotte in the barn. "
+                       },
+                     "is-this": {
+                         title: "IS THIS IT?",
+                         author: "HANNAH TOVEY",
+                         price: "₹319",
+                         image: "https://neobooksandcoffee.com/images/thumbs/018/0185348_9780349424712_400.jpeg",
+                         description: "It's a defining album of the early 2000s garage rock revival, known for its raw, minimalist sound and catchy, guitar-driven songs. The album explores themes of youth, relationships, and uncertainty, often through the lens of a cynical, world-weary narrator.  "
+                       },
+                     "skippy-dies": {
+                         title: "SKIPPY DIES",
+                         author: "PAUL MURRAY",
+                         price: "₹1816",
+                         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtNAyg7ZG5eCMakK3xK_sHRreR11YVdGyxAg&s",
+                         description:"Daniel Skippy Juster, a student at Seabrook College, dies during a donut-eating contest at the beginning of the story. The novel then explores the events leading up to his death and its impact on the school community."
+                       },
+                     "love-or": {
+                         title: "LOVE OR OBSESSION",
+                         author: "HIAH MEHTA",
+                         price: "₹193",
+                         image: "https://m.media-amazon.com/images/I/81mAO3JY7PL._UF1000,1000_QL80_.jpg",
+                         description:" a love story exploring the fine line between love and obsession. The narrative focuses on the emotional journey of the protagonists, delving into the depths of passion, heartbreak, and the enduring power of love."
+                       },
+                       "i-too": {
+                           title: "I TOO HAD A LOVE STORY",
+                           author: "RAVINDER SINGH",
+                           price: "₹183",
+                           image: "https://english.cdn.zeenews.com/sites/default/files/2024/10/11/1543062-i-too-had-a-love-story-by-ravinder-singh.jpg",
+                           description: " It is the tender and heartfelt tale of Ravin and Khushi--two people who found each other on a matrimonial site and fell in love . . . until life put their love to the ultimate test."
+                         },
+                         "a-love": {
+                           title: "A LOVE STORY FROM THE HEART",
+                           author: "TERRY ATKINSON",
+                           price: "₹908",
+                           image: "https://m.media-amazon.com/images/I/81GJLCL1F2L._UF1000,1000_QL80_.jpg",
+                           description: "a sweet and clean romance. If you like doting heroes, startling chemistry, and enchanting African settings, then you'll adore Terry Atkinson's captivating tale. Buy A Love Story From the Heart to watch soulmates entwine today!"
+                         },
+                         "one-last": {
+                             title: "ONE LAST LOVE",
+                             author: "DEREK  HAINES",
+                             price: "₹345",
+                             image: "https://m.media-amazon.com/images/I/61lReXCEdzL._AC_UF1000,1000_QL80_.jpg",
+                             description: "the last romantic relationship someone has, often implying a deep, lasting connection that fulfills them until the end of their life. It can also be the title of a book by Derek Haines, a story of love and second chances within the context of a hospice care center."
+                           },
+                         "echoes-of": {
+                             title: "ECHOES OF LOVE",
+                             author: "JENNY ASHCROFT",
+                             price: "₹1195",
+                             image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqrGm6hpizzLEsgnXPRJWPmlOdgkVin2JMoA&s",
+                             description: "the lasting impact and reverberations of romantic and emotional connections. It signifies how past relationships and experiences continue to influence one's thoughts, feelings, and behaviors over time. The term suggests that the echoes of love, both positive and negative, can resonate deeply and shape individuals long after the initial experience has passed. "
+                           },
+                         "can-love": {
+                             title: "CAN LOVE HAPPEN TWICE",
+                             author: "RAVINDER SINGH",
+                             price: "₹184",
+                             image: "https://i.pinimg.com/236x/4c/5b/bc/4c5bbc01ba245865bd75dff9787e83ac.jpg",
+                             description: "a novel that explores the possibility of finding love again after experiencing a profound loss. It's a sequel to Singh's bestselling I Too Had a Love Story, and it follows the protagonist, Ravin, as he navigates life after the death of his fiancee, Khushi. "
+                           },
+                         "the-spanish": {
+                             title: "THE SPANISH LOVE DECEPTION",
+                             author: "ELENA ARMAS",
+                             price: "₹430",
+                             image: "https://forevershereads.com/wp-content/uploads/2023/09/The-Spanish-Love-Deception-Elena-Armas-640x1024.png",
+                             description: " a romance novel centered around Catalina Martín, who needs a date for her sister's wedding after lying about having an American boyfriend. "
+                           },
+                         "the-pocket": {
+                             title: "THE POCKET LOVE STORIES",
+                             author: "AJITABHA BOSE",
+                             price: "₹180",
+                             image: "https://m.media-amazon.com/images/I/81KBDJ8ZSjS._AC_UF1000,1000_QL80_.jpg",
+                             description: "a a novella by Ajitabha Bose, known for its small size and focus on romance. It follows the relationship between Ramachandra and Tani, where Ramachandra's feelings are not initially reciprocated."
+                           },
+                         "paris-a": {
+                             title: "PARIS A LOVE STORY",
+                             author: " KATI MARTON",
+                             price: "₹1279",
+                             image:"https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781451691566/paris-a-love-story-9781451691566_hr.jpg",
+                             description: "a memoir exploring the author's deep connection with Paris, interwoven with personal experiences of love, loss, and the impact of historical events. "
+                           },
+                         "the-soulmates": {
+                             title: "THE SOULMATES",
+                             author: "PRERNA PUJARI",
+                             price: "₹142",
+                             image: "https://i0.wp.com/www.zorbabooks.com/wp-content/uploads/2017/04/The-Soulmats-Front-Side.jpg?fit=1555%2C2532&ssl=1",
+                             description: "a domestic suspense novel about a couple, Pippa and Gabe, who move into a house overlooking a cliff known as The Drop, a popular suicide spot. "
+                           },
+                         "i-love": {
+                             title: "I LOVE YOU FATE",
+                             author: "PRAVEEN CHANDRAN",
+                             price: "₹216",
+                             image: "https://cdn.exoticindia.com/images/products/original/books-2019-025/ubi574.jpg",
+                             description: "a book detailing a real-life love story between an Indian-English banker and his partner, exploring themes of love, fate, and cross-cultural relationships. The book delves into whether deep love can transcend cultural, racial, and linguistic differences, and if such relationships can succeed. "
+                         },
+                         "the-one": {
+                             title: "THE ONE YOU CANNOT HAVE",
+                             author: "PREETI SHENOY",
+                             price: "₹279",
+                             image: "https://www.bookgeeks.in/wp-content/uploads/2017/04/the-one-you-cannot-have.jpg",
+                             description: "a modern romance novel exploring themes of unrequited love, complicated relationships, and the struggle to move on from a past love. The story centers around Aman, who is still hung up on Shruti, his former girlfriend who left him and married someone else. "
+                           },
+                           "guns-germs": {
+                               title: "GUNS GERMS, AND STEEL",
+                               author: "JARED DIAMOND",
+                               price: "₹615",
+                               image: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1453215833i/1842._UX160_.jpg",
+                               description: "explores the reasons for global inequalities in human societies. It argues that geographical and environmental factors, rather than inherent differences in human populations, are the primary drivers of historical development and the dominance of certain civilizations. "
+                             },
+                             "the-killer": {
+                               title: "THE KILLER ANGELS",
+                               author: "MICHAEL SHAARA",
+                               price: "₹2880",
+                               image: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1355371689i/682804._UX160_.jpg",
+                               description: "a historical novel by Michael Shaara that vividly portrays the Battle of Gettysburg during the American Civil War. The book, a Pulitzer Prize winner, is known for its detailed character development and its exploration of the battle from multiple perspectives, including both Union and Confederate viewpoints."
+                             },
+                             "the-history": {
+                                 title: "THE HISTORY OF THE ANCIENT WORLD",
+                                 author: "SUSAN WISE BAUER",
+                                 price: "₹2785",
+                                 image: "https://m.media-amazon.com/images/I/71OXQZezcnL._AC_UF1000,1000_QL80_DpWeblab_.jpg",
+                                 description: "encompasses the period from the invention of writing to the fall of the Western Roman Empire (or the rise of Islam), encompassing the development of civilizations across the globe. It's a vast field of study, encompassing diverse cultures and their unique trajectories. "
+                               },
+                             "the-last": {
+                                 title: "THE LAST MUGHAL",
+                                 author: "WILLIAM DALRYMPLE",
+                                 price: "₹441",
+                                 image: "https://static.toiimg.com/photo/88124986/88124986.jpg",
+                                 description: "a historical account focusing on the life of Bahadur Shah Zafar II, the last Mughal emperor, and the collapse of the Mughal Empire in 1857. "
+                               },
+                             "the-silk": {
+                                 title: "THE SILK ROADS",
+                                 author: "PETER FRANKOPAN",
+                                 price: "₹529",
+                                 image: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1472636067i/25812847._UX160_.jpg",
+                                 description: "a network of ancient trade routes that connected the East (primarily China) with the West (Europe and the Middle East)."
+                               },
+                             "the-greeks": {
+                                 title: "THE GREEKS",
+                                 author: "RODERICK BEATON",
+                                 price: "₹2535",
+                                 image:"https://m.media-amazon.com/images/I/51ChY9QO0AL._SL500_.jpg",
+                                 description: " a concise but wide-ranging introduction to the culture of ancient Greece, providing a comprehensive survey that covers all the key elements of ancient Greek civilisation from the age of Homer to the Hellenistic period."
+                               },
+                             "modern-india": {
+                                 title: "MODERN INDIA",
+                                 author: "HENRY HARPUR SPRY",
+                                 price: "₹1840",
+                                 image: "https://m.media-amazon.com/images/I/613QoZQMuEL._AC_UF1000,1000_QL80_.jpg",
+                                 description: "the decline of the Mughal Empire, the rise of British colonial rule, the Indian independence movement, and the subsequent establishment of a modern, independent nation. "
+                               },
+                             "my-brief": {
+                                 title: "MY BRIEF HISTORY",
+                                 author: "STEPHEN HAWKING",
+                                 price: "₹400",
+                                 image: "https://www.menakabooks.com/cdn/shop/products/11041_2048x.jpg?v=1600565780",
+                                 description: "an autobiography by Stephen Hawking. My Brief History narrates Stephen Hawking's journey through life. It includes memories from his childhood in post-war London right until his years of worldwide praise and being a celebrity. This book is generously furnished with rarely seen photographs."
+                               },
+                             "judgment-at": {
+                                 title: "JUDGMENT AT TOKYO",
+                                 author: "GARY J. BASS",
+                                 price: "₹762",
+                                 image: "https://images2.penguinrandomhouse.com/cover/9781101971079",
+                                 description: "a book that delves into the International Military Tribunal for the Far East, also known as the Tokyo Trial, which took place after World War II to prosecute Japanese leaders for war crimes."
+                               },
+                             "white-mughals": {
+                                 title: "WHITE MUGHALS",
+                                 author: "WILLIAM DALRYMPLE",
+                                 price: "₹499",
+                                 image: "https://covers.openlibrary.org/b/olid/OL7260017M-M.jpg",
+                                 description: "a historical narrative, primarily a love story, set in 18th-century India, by William Dalrymple. It centers on the relationship between James Achilles Kirkpatrick, a British East India Company official, and Khair un-Nissa, a Hyderabadi noblewoman. "
+                               },
+                             "medieval-indian": {
+                                 title: "MEDIEVAL INDIAN  HISTORY",
+                                 author: "LALITHA SHARMA",
+                                 price: "₹401",
+                                 image: "https://www.exoticindiaart.com/images/products/original/books-2019-024/uba045.webp",
+                                 description: "the decline of the Gupta Empire, the rise and fall of various regional kingdoms, the establishment of the Delhi Sultanate and Mughal Empire, and significant social, cultural, and religious developments."
+                               },
+                             "india-a": {
+                                 title: "INDIA A HISTORY",
+                                 author: "JOHN KEAY",
+                                 price: "₹650",
+                                 image: "https://m.media-amazon.com/images/I/914IqHav6IL._AC_UF1000,1000_QL80_.jpg",
+                                 description: " a probing and provocative chronicle of five thousand years of South Asian history, from the first Harrapan settlements on the banks of the Indus River to the recent nuclear-arms race."
+                               },
+    };
+    
+
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const book = books[id];
+
+    if (book) {
+      document.getElementById('book-title').innerText = book.title;
+      document.getElementById('book-author').innerText = `by ${book.author}`;
+      document.getElementById('book-price').innerText = book.price;
+      document.getElementById('book-image').src = book.image;
+      document.getElementById('book-description').innerText = book.description;
+    } else {
+      document.querySelector('.container').innerHTML = "<h2>Book not found!</h2>";
+    }
+  </script>
+</body>
+</html>

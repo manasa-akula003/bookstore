@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Thriller Books</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+ .thriller-books .card {
+    border: none;
+    margin-bottom: 30px;
+     
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+    
+    object-fit: cover;
+  }
+
+
+  .thriller-books .card img {
+   
+    display : block;
+    width:60%;
+    height:70%;
+  }
+
+  .thriller-books .card-title {
+    font-weight: 400;
+  }
+      .a{
+  
+  padding:25px;
+  width:310px;
+  }
+  
+    .price-tag {
+      margin-top: 10px;
+      padding: 8px 12px;
+      font-size: 18px;
+       position:relative;
+      left:40px;
+    }
+
+    .price-old {
+      text-decoration: line-through;
+      color: gray;
+      font-size: 16px;
+      margin-right: 8px;
+       position:relative;
+      left:50px;
+    }
+
+    .price-section {
+      padding:5px;
+    }
+  
+    .button {
+  
+    position:relative;
+    left:40px;
+    text-align:center;
+  
+  }
+  
+  
+  
+   .z{
+  
+  position:relative;
+  top:10px;
+
+}
+  
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="home.html">BookStore</a>
+  <div class="ml-auto">
+    <a href="cart.html" class="btn btn-outline-light">
+      🛒 Cart (<span id="cart-count">0</span>)
+    </a>
+  </div>
+</nav>
+  <section class=" fluid-container thriller-books">
+      <div class="row">
+         <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://novelonmymind.com/wp-content/uploads/2023/03/The-Silent-Patient-by-Alex-Michaelides.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">THE SILENT PATIENT</h5>
+                      <p class="card-text">BY ALEX MICHAELIDES</p>
+                  </div>
+                   <div class="price-section">
+                          <span class="price-old">₹399</span>
+                           <span class="price-tag">₹216</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="THE SILENT PATIENT"
+                              data-author="ALEX MICHAELIDES"
+                              data-price="216">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=the-silent" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                      </div>
+              </div>
+          </div>
+          
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://dm989u341afjd.cloudfront.net/wp-content/uploads/2018/02/23173634/B005WUVLAG.01.LZZZZZZZ.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">DEADLY STILL WATER</h5>
+                      <p class="card-text">BY ROGER STELLJES</p>
+                  </div>
+                    <div class="price-section">
+                          <span class="price-old">₹499</span>
+                           <span class="price-tag">₹346</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="DEADLY STILL WATER"
+                              data-author="ROGER STELLJES"
+                              data-price="346">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=deadly-still" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                      </div>
+              </div>
+          </div>
+          
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://m.media-amazon.com/images/I/81HdqDzVJDL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">DEATH IN A LONELY PLACE</h5>
+                      <p class="card-text">BY STIG ABELL</p>
+                  </div>
+                    <div class="price-section">
+                          <span class="price-old">₹1586</span>
+                           <span class="price-tag">₹1506</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="DEATH IN A LONELY PLACE"
+                              data-author="STIG ABELL"
+                              data-price="1506">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=death-in" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                      </div>
+              </div>
+          </div>
+          
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://novelonmymind.com/wp-content/uploads/2023/03/The-Housemaid-by-Freida-McFadden.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">THE HOUSEMAID</h5>
+                      <p class="card-text">BY FREIDA McFADDEN</p>
+                  </div>
+                    <div class="price-section">
+                          <span class="price-old">₹506</span>
+                           <span class="price-tag">₹275</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="THE HOUSEMAID"
+                              data-author="FREIDA McFADDEN"
+                              data-price="275">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=the-housemaid" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                      </div>
+              </div>
+          </div>
+          
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781501107993/the-perfect-stranger-9781501107993_lg.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">THE PERFECT STRANGER</h5>
+                      <p class="card-text">BY MEGAN MIRANDA</p>
+                  </div>
+                    <div class="price-section">
+                          <span class="price-old">₹999</span>
+                           <span class="price-tag">₹799</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="THE PERFECT STRANGER"
+                              data-author="MEGAN MIRANDA"
+                              data-price="799">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=the-perfect" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                      </div>
+              </div>
+          </div>
+           
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1688051408-71Nz2T23lSL.jpg?crop=1xw:1xh;center,top&resize=980:*" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">MISERY</h5>
+                      <p class="card-text">BY STEPHEN KING</p>
+                  </div>
+                    <div class="price-section">
+                          <span class="price-old">₹599</span>
+                           <span class="price-tag">₹375</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="MISERY"
+                              data-author="STEPHEN KING"
+                              data-price="375">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=misery" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                      </div>
+              </div>
+          </div>
+           
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://hips.hearstapps.com/hmg-prod/images/a-flicker-in-the-dark-1674490210.jpg?crop=1xw:1xh;center,top&resize=980:*" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">A FLICKER IN THE DARK</h5>
+                      <p class="card-text">BY STACY WILLINGHAM</p>
+                  </div>
+                    <div class="price-section">
+                          <span class="price-old">₹500</span>
+                           <span class="price-tag">₹422</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="A FLICKER IN THE DARK"
+                              data-author="STACY WILLINGHAM"
+                              data-price="422">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=a-flicker" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                      </div>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://booksrun.com/blog/wp-content/uploads/2023/10/pines.png" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">THE HOUSE IN THE PINES</h5>
+                      <p class="card-text">BY ANA REYES</p>
+                  </div>
+                    <div class="price-section">
+                          <span class="price-old">₹899</span>
+                           <span class="price-tag">₹799</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="THE HOUSE IN THE PINES"
+                              data-author="ANA REYES"
+                              data-price="799">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=the-house" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                      </div>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://aboxofstories.com/cdn/shop/articles/the-best-thriller-books-of-2020-so-far-266079.jpg?v=1725865975" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">THE HIDDEN GIRLS</h5>
+                      <p class="card-text">BY REBECCA WHITNEY</p>
+                  </div>
+                    <div class="price-section">
+                          <span class="price-old">₹509</span>
+                           <span class="price-tag">₹450</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="THE HIDDEN GIRLS"
+                              data-author="REBECCA WHITNEY"
+                              data-price="450">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=the-hidden" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                      </div>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://images3.penguinrandomhouse.com/cover/9780735212534" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">THE HUNGER</h5>
+                      <p class="card-text">BY STEPHEN KING</p>
+                  </div>
+                    <div class="price-section">
+                          <span class="price-old">₹1844</span>
+                           <span class="price-tag">₹1996</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="THE HUNGER"
+                              data-author="STEPHEN KING"
+                              data-price="1996">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=the-hunger" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                      </div>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://media1.popsugar-assets.com/files/thumbor/CviKQB1axePG9pLteyZHAXMhwKI=/fit-in/792x1195/filters:format_auto():upscale()/2023/06/26/064/n/48847894/e72801c513cf8962_Thicker_Than_Water_Megan_Collins.jpeg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">THICKER THAN WATER</h5>
+                      <p class="card-text">BY MEGAN COLLINS</p>
+                  </div>
+                    <div class="price-section">
+                          <span class="price-old">₹2607</span>
+                           <span class="price-tag">₹2023</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="THICKER THAN WATER"
+                              data-author="MEGAN COLLINS"
+                              data-price="2023">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=thicker-than" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                      </div>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://m.media-amazon.com/images/I/618z0BiO2qL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">THAT THRILLER NIGHT</h5>
+                      <p class="card-text">BY NIBEDITA DAS</p>
+                  </div>
+                    <div class="price-section">
+                          <span class="price-old">₹200</span>
+                           <span class="price-tag">₹150</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="THAT THRILLER NIGHT"
+                              data-author="NIBEDITA DAS"
+                              data-price="150">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=that-thriller" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                      </div>
+              </div>
+          </div>
+       </div>
+    </section>
+    
+      <script>
+function updateCartCount() {
+	  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+	  const totalCount = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+	  document.getElementById('cart-count').innerText = totalCount;
+	}
+
+
+document.querySelectorAll('.add-to-cart').forEach(button => {
+  button.addEventListener('click', function () {
+    const title = this.getAttribute('data-title');
+    const author = this.getAttribute('data-author');
+    const price = parseFloat(this.getAttribute('data-price'));
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existingIndex = cart.findIndex(item => item.title === title);
+
+    if (existingIndex !== -1) {
+      cart[existingIndex].quantity += 1;
+    } else {
+      cart.push({ title, author, price, quantity: 1 });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    alert(`${title} added to cart!`);
+  });
+});
+
+// Update count on page load
+   updateCartCount();
+</script>
+    
+    
+</body>
+</html>

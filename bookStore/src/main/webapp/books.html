@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Books</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+      <style>
+      .feature-books .card {
+    border: none;
+    margin-bottom: 30px;
+     
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+    
+    object-fit: cover;
+  }
+
+.feature-books .card-body {
+
+  margin:0px;
+  padding:10px;
+  text-align:center;
+
+ }
+
+  .feature-books .card img {
+   
+    display : block;
+    width:60%;
+    height:70%;
+  }
+
+  .feature-books .card-title {
+    font-weight: 400;
+    
+  }
+  
+  .a {
+  
+  padding:25px;
+  width:310px;
+  }
+  
+  
+    .price-tag {
+      margin-top: 10px;
+      padding: 8px 12px;
+      font-size: 18px;
+       position:relative;
+      left:50px;
+    }
+
+    .price-old {
+      text-decoration: line-through;
+      color: gray;
+      font-size: 16px;
+      margin-right: 8px;
+       position:relative;
+      left:60px;
+    }
+
+    .price-section {
+      padding:5px;
+    }
+  
+    .button {
+  
+    position:relative;
+    left:50px;
+    text-align:center;
+  
+  }
+  
+  .z{
+  
+  position:relative;
+  top:10px;
+
+}
+  
+      </style>
+</head>
+ <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="home.html">BookStore</a>
+  <div class="ml-auto">
+    <a href="cart.html" class="btn btn-outline-light">
+      🛒 Cart (<span id="cart-count">0</span>)
+    </a>
+  </div>
+</nav>
+
+ 
+  <section class=" fluid-container feature-books">
+         <div class="row">
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://m.media-amazon.com/images/I/81YC6O+-qbL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                 <div class="card-body">
+                      <h5 class="card-title">Bhagavad geta</h5>
+                      <p class="card-text">By A.C.Bhaktivedanta Swami Prabhupada</p>
+                  </div>
+                      <div class="price-section">
+                          <span class="price-old">₹599</span>
+                           <span class="price-tag">₹365</span>
+                         <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="Bhagavad geta"
+                              data-author="A.C.Bhaktivedanta Swami Prabhupada"
+                              data-price="365">
+                               Add to Cart
+                             </button>
+                              <a href="book-details.html?id=bhagavad-geta" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://images.cdn2.buscalibre.com/fit-in/360x360/09/8a/098a95c3696d964cf954301032557c8f.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">WHITE MUGHALS</h5>
+                      <p class="card-text">BY WILLIAM DALRYMPLE</p>
+                  </div>
+                  <div class="price-section">
+                          <span class="price-old">₹799</span>
+                           <span class="price-tag">₹499</span>
+                         <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="WHITE MUGHALS"
+                              data-author=" WILLIAM DALRYMPLE"
+                              data-price="499">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=white-mughals" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                 </div>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://www.crossword.in/cdn/shop/files/61Ktyy7KymL._SL1500.jpg?v=1704174640" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">The Art Of Being Alone</h5>
+                      <p class="card-text">By Renuka Gavrani</p>
+                   </div>
+                      <div class="price-section">
+                          <span class="price-old">₹99</span>
+                           <span class="price-tag">₹99</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="The Art Of Being Alone"
+                              data-author="Renuka Gavrani"
+                              data-price="99">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=the-art" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://i.pinimg.com/236x/0a/f5/e7/0af5e7201a53acd2b102faf75ddbd12c.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">The Monk Who Sold His Ferrari</h5>
+                      <p class="card-text">By Robin Sharma</p>
+                  </div>
+                  <div class="price-section">
+                          <span class="price-old">₹299</span>
+                           <span class="price-tag">₹199</span>
+                         <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="The Monk Who Sold His Ferrari"
+                              data-author=" Robin Sharma"
+                              data-price="199">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=the-monk" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                    </div>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://m.media-amazon.com/images/I/71IbfWECC0L._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">Krishna: The Man and His Philosophy</h5>
+                      <p class="card-text">By Osho</p>
+                  </div>
+                  <div class="price-section">
+                          <span class="price-old">₹599</span>
+                           <span class="price-tag">₹362</span>
+                         <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="Krishna: The Man & His Philosophy"
+                              data-author="Osho"
+                              data-price="362">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=krishna" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                      </div>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1647752735i/60651812.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">BedTime Stories For Kids</h5>
+                      <p class="card-text">By Alex Fabler</p>
+                  </div>
+                   <div class="price-section">
+                          <span class="price-old">₹180</span>
+                           <span class="price-tag">₹120</span>
+                         <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="BedTime Stories For Kids"
+                              data-author="Alex Fabler"
+                              data-price="120">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=bedtime-stories" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+       </div>
+       <div class=" row">
+           <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://imgv2-2-f.scribdassets.com/img/word_document/487835881/original/216x287/26c847007f/1741538964?v=1ssss" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">The Mountain Is You</h5>
+                      <p class="card-text">By Brianna Wiest</p>
+                  </div>
+                   <div class="price-section">
+                          <span class="price-old">₹399</span>
+                           <span class="price-tag">₹259</span>
+                         <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="The Mountain Is You"
+                              data-author="Brianna Wiest"
+                              data-price="259">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=the-mountain" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                      </div>
+              </div>
+          </div>
+           <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://anahuang.com/wp-content/uploads/2023/02/Screen-Shot-2023-02-10-at-11.47.40-AM.png" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">Twisted Lies</h5>
+                      <p class="card-text">By Ana Huang</p>
+                  </div>
+                   <div class="price-section">
+                          <span class="price-old">₹599</span>
+                           <span class="price-tag">₹399</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="Twisted Lies"
+                              data-author="Ana Huang"
+                              data-price="399">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=twisted-lies" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                      </div>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://powerseductionandwar.com/wp-content/uploads/2024/02/The-48-Laws-of-Power-1.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">Power</h5>
+                      <p class="card-text"> By Robert  Greene</p>
+                  </div> 
+                  <div class="price-section">
+                          <span class="price-old">₹599</span>
+                           <span class="price-tag">₹374</span>
+                         <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="Power"
+                              data-author=" Robert  Greene"
+                              data-price="374">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=power" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://m.media-amazon.com/images/I/81xIPfJ6iUL.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">A Thousand Splendid Suns</h5>
+                      <p class="card-text"> By Khaled Hosseini</p>
+                  </div>
+                   <div class="price-section">
+                          <span class="price-old">₹599</span>
+                           <span class="price-tag">₹375</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="A Thousand Splendid Suns"
+                              data-author="Khaled Hosseini"
+                              data-price="375">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=a-thousand" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+                        
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src=" https://m.media-amazon.com/images/I/81IzbD2IiIL.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">The Kite Runner</h5>
+                      <p class="card-text">By Khaled Hosseini</p>
+                  </div> 
+                  <div class="price-section">
+                          <span class="price-old">₹599</span>
+                           <span class="price-tag">₹375</span>
+                         <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="The Kite Runner"
+                              data-author="Khaled Hosseini"
+                              data-price="375">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=the-kite" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                    </div>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src=https://apollo.olx.in/v1/files/g4bz5v7z64d32-IN/image class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">I Don't Love You Anymore</h5>
+                      <p class="card-text">By Rithvik singh</p>
+                  </div> 
+                  <div class="price-section">
+                          <span class="price-old">₹299</span>
+                           <span class="price-tag">₹205</span>
+                         <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="My Quiet Imagination"
+                              data-author="Paulo Coelho"
+                              data-price="205">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=i-don't" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                    </div>
+              </div>
+          </div>
+       </div>
+       <div class="row">
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://m.media-amazon.com/images/I/91pZXkHgVTL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">Rock Paper Scissors</h5>
+                      <p class="card-text">By Alice Feeney</p>
+                  </div> 
+                  <div class="price-section">
+                          <span class="price-old">₹499</span>
+                           <span class="price-tag">₹313</span>
+                         <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="Rock Paper Scissors"
+                              data-author="Alice Feeney"
+                              data-price="313">
+                               Add to Cart
+                             </button><a href="book-details.html?id=rock-paper" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://m.media-amazon.com/images/I/81l3rZK4lnL.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">Ikigai</h5>
+                      <p class="card-text">By Hector Garcia and Francesc Miralles</p>
+                  </div> 
+                  <div class="price-section">
+                          <span class="price-old">₹1920</span>
+                           <span class="price-tag">₹1520</span>
+                         <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="Ikigai"
+                              data-author="Hector Garcia & Francesc Miralles"
+                              data-price="1520">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=ikigai" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://m.media-amazon.com/images/I/8105fcMAVyL._UF1000,1000_QL80_.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">The HouseMaid</h5>
+                      <p class="card-text">By Freida McFadden</p>
+                  </div> 
+                  <div class="price-section">
+                          <span class="price-old">₹259</span>
+                           <span class="price-tag">₹209</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="The HouseMaid"
+                              data-author=" Freida McFadden"
+                              data-price="209">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=the-housemaid" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/book/w/l/y/can-we-be-strangers-again-original-imah9nm5suxrhh37.jpeg?q=90&crop=false" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">Can We Be Strangers Again?</h5>
+                      <p class="card-text">By Shrijeet Shandilya</p>
+                  </div> 
+                  <div class="price-section">
+                          <span class="price-old">₹299</span>
+                           <span class="price-tag">₹222</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="Can We Be Strangers Again?"
+                              data-author=" Shrijeet Shandilya"
+                              data-price="222">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=can-we" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src=https://img1.od-cdn.com/ImageType-100/5054-1/%7BD35946A6-6E62-4594-A21C-70B693BF6B37%7DIMG100.JPG class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">PowerLess</h5>
+                      <p class="card-text">By Lauren Roberts</p>
+                  </div>
+                  <div class="price-section">
+                          <span class="price-old">₹1759</span>
+                           <span class="price-tag">₹1382</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="PowerLess"
+                              data-author="Lauren Roberts"
+                              data-price="1382">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=powerless" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+                     
+              </div>
+          </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://m.media-amazon.com/images/I/91XZ3hDcXxL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">Hunting Adeline</h5>
+                      <p class="card-text">By H.D Cartlon</p>
+                  </div>
+                  <div class="price-section">
+                          <span class="price-old">₹1623</span>
+                           <span class="price-tag">₹1219</span>
+                         <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="Hunting Adeline"
+                              data-author="H.D Cartlon"
+                              data-price="1219">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=hunting-adeline" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                     </div>
+              </div>
+          </div>
+        </div>
+          <div class="col-md-2">
+              <div class="card">
+                  <div class="a">   
+                     <img src="https://m.media-amazon.com/images/I/71K7nN6Mu+L.jpg" class="card-img-top" alt="Book 1">
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">Surrounded By Idiots</h5>
+                      <p class="card-text">By thomas erikson</p>
+                  </div> 
+                  <div class="price-section">
+                          <span class="price-old">2718</span>
+                           <span class="price-tag">2117</span>
+                        <button 
+                              class="btn btn-success button add-to-cart"
+                              data-title="Surrounded By Idiots"
+                              data-author=" thomas erikson"
+                              data-price="2117">
+                               Add to Cart
+                             </button>
+                             <a href="book-details.html?id=surrounded-by" class="btn btn-primary button , z">
+                                 View Details
+                              </a>
+                    </div>
+              </div>
+          </div>
+          <a href="home.html"> Home</a>
+   </section>
+   
+     
+<script>
+function updateCartCount() {
+	  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+	  const totalCount = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+	  document.getElementById('cart-count').innerText = totalCount;
+	}
+
+
+document.querySelectorAll('.add-to-cart').forEach(button => {
+  button.addEventListener('click', function () {
+    const title = this.getAttribute('data-title');
+    const author = this.getAttribute('data-author');
+    const price = parseFloat(this.getAttribute('data-price'));
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existingIndex = cart.findIndex(item => item.title === title);
+
+    if (existingIndex !== -1) {
+      cart[existingIndex].quantity += 1;
+    } else {
+      cart.push({ title, author, price, quantity: 1 });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    alert(`${title} added to cart!`);
+  });
+});
+
+// Update count on page load
+   updateCartCount();
+</script>
+
+   
+   
+   
+</body>
+</html>
